@@ -13,6 +13,7 @@
   --shadow: 0 30px 60px -28px rgba(7, 15, 34, 0.65);
   --radius-sm: 12px;
   --radius-md: 20px;
+  --nav-offset: clamp(92px, 12vh, 146px);
   font-family: 'Inter', 'Manrope', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
@@ -30,6 +31,10 @@ body {
   line-height: 1.65;
 }
 
+html {
+  scroll-padding-top: var(--nav-offset);
+  scroll-behavior: smooth;
+}
 a {
   color: inherit;
   text-decoration: none;
@@ -531,6 +536,151 @@ img {
 
 .card p {
   color: var(--text-soft);
+}
+
+.team-page {
+  scroll-snap-type: y mandatory;
+  overscroll-behavior-y: contain;
+}
+
+.team-page header.hero,
+.team-page main > section {
+  min-height: 100svh;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+.team-page header.hero {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: clamp(64px, 10vw, 120px);
+}
+
+.team-page main > section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.team-page .hero-content {
+  margin-top: auto;
+  margin-bottom: clamp(48px, 8vw, 120px);
+  margin-left: auto;
+  margin-right: auto;
+  width: min(860px, 88vw);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(24px, 5vw, 40px);
+  align-items: center;
+  text-align: center;
+}
+
+.team-main {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-section {
+  width: 100%;
+  padding: clamp(72px, 16vh, 140px) 0;
+  position: relative;
+}
+
+.profile-inner {
+  width: min(1180px, 92vw);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(28px, 6vw, 52px);
+  text-align: center;
+}
+
+.profile-section--reverse .profile-inner {
+  flex-direction: column;
+}
+
+.profile-photo {
+  width: clamp(220px, 32vw, 320px);
+  aspect-ratio: 3 / 4;
+  border-radius: clamp(22px, 4vw, 34px);
+  border: 1px solid rgba(77, 161, 255, 0.28);
+  background:
+    radial-gradient(circle at 20% 20%, rgba(77, 161, 255, 0.3), rgba(3, 7, 18, 0.88)),
+    rgba(6, 12, 28, 0.92);
+  box-shadow: inset 0 0 0 1px rgba(33, 212, 167, 0.18), var(--shadow);
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(248, 251, 255, 0.9);
+}
+
+.profile-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 620px;
+}
+
+.profile-role {
+  margin: 0;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  color: var(--accent-strong);
+}
+
+.profile-content h2 {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 2.8rem);
+}
+
+.profile-content p {
+  margin: 0;
+  color: var(--text-soft);
+}
+
+.profile-focus {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.profile-focus li {
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(77, 161, 255, 0.16);
+  border: 1px solid rgba(77, 161, 255, 0.22);
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(248, 251, 255, 0.85);
+}
+
+  .profile-inner {
+    flex-direction: row;
+    text-align: left;
+    justify-content: space-between;
+  }
+
+  .profile-section--reverse .profile-inner {
+    flex-direction: row-reverse;
+  }
+
+  .profile-photo {
+    flex: 0 0 clamp(240px, 28vw, 320px);
+  }
+
+  .profile-content {
+    flex: 1;
+  }
 }
 
 .trachease-section {
