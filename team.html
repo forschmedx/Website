@@ -14,26 +14,27 @@
     <nav class="nav">
       <div class="nav-inner container">
         <a class="brand" href="index.html#top">
-          <img class="brand-logo" src="assessts/medx-logo.png" alt="Forsch MedX logo">
+          <span class="brand-badge">
+            <img class="brand-logo" src="assessts/medx-logo.png" alt="Forsch MedX logo">
+          </span>
+          <span class="brand-wordmark">
+            <span class="brand-line">Forsch<span class="brand-line-accent">MedX</span></span>
+            <span class="brand-tagline">Imagine | Initiate | Innovate</span>
+          </span>
         </a>
+        <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
         <ul class="nav-links">
+          <li><a href="index.html#about">About Us</a></li>
           <li><a href="index.html#focus">Focus Areas</a></li>
-          <li><a href="index.html#trachease">TrachEase</a></li>
-          <li><a href="index.html#support">Partners</a></li>
-          <li><a href="team.html" aria-current="page">Our Team</a></li>
+          <li><a href="index.html#trachease">Products</a></li>
+          <li><a href="index.html#support">Contributors</a></li>
+          <li><a href="team.html" aria-current="page">Team</a></li>
           <li><a href="index.html#contact">Contact</a></li>
         </ul>
-        <div class="nav-actions">
-          <label class="search-field" for="site-search">
-            <svg viewBox="0 0 24 24" fill="none">
-              <path d="m20 20-3.6-3.6m1.1-3.5a6.1 6.1 0 1 1-12.2 0 6.1 6.1 0 0 1 12.2 0z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            <input id="site-search" type="search" placeholder="Search Forsch MedX...">
-            <span class="shortcut">Ctrl&nbsp;+&nbsp;K</span>
-          </label>
-          <span class="nav-divider" aria-hidden="true"></span>
-          <a class="nav-button" href="index.html#contact">Login / Sign Up</a>
-        </div>
       </div>
     </nav>
 
@@ -173,9 +174,9 @@
         </div>
       </div>
       <nav class="footer-nav" aria-label="Footer">
-        <a href="index.html#trachease">Innovations</a>
+        <a href="index.html#trachease">Products</a>
         <a href="index.html#focus">Focus</a>
-        <a href="#team">Our Team</a>
+        <a href="#team">Team</a>
         <a href="index.html#contact">Contact</a>
       </nav>
       <p class="footer-copy">&copy; <span id="year"></span> Forsch MedX. All rights reserved.</p>
@@ -184,6 +185,72 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+    document.documentElement.classList.add('js');
+
+    const nav = document.querySelector('.nav');
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelectorAll('.nav-links a');
+
+    if (nav && navToggle) {
+      const closeNav = () => {
+        navToggle.setAttribute('aria-expanded', 'false');
+        navToggle.setAttribute('aria-label', 'Open menu');
+        nav.classList.remove('nav-open');
+        document.body.classList.remove('nav-open');
+      };
+
+      const updateNavMode = () => {
+        const useDrawer = window.innerWidth <= 1200;
+        nav.classList.toggle('nav-drawer', useDrawer);
+        navToggle.hidden = !useDrawer;
+        if (!useDrawer) {
+          closeNav();
+        }
+      };
+
+      navToggle.addEventListener('click', () => {
+        if (!nav.classList.contains('nav-drawer')) {
+          return;
+        }
+
+        const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+        navToggle.setAttribute('aria-expanded', String(!isExpanded));
+        navToggle.setAttribute('aria-label', isExpanded ? 'Open menu' : 'Close menu');
+        nav.classList.toggle('nav-open', !isExpanded);
+        document.body.classList.toggle('nav-open', !isExpanded);
+      });
+
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          if (nav.classList.contains('nav-drawer') && navToggle.getAttribute('aria-expanded') === 'true') {
+            closeNav();
+          }
+        });
+      });
+
+      document.addEventListener('click', event => {
+        if (
+          nav.classList.contains('nav-drawer') &&
+          navToggle.getAttribute('aria-expanded') === 'true' &&
+          !nav.contains(event.target)
+        ) {
+          closeNav();
+        }
+      });
+
+      window.addEventListener('keydown', event => {
+        if (
+          event.key === 'Escape' &&
+          nav.classList.contains('nav-drawer') &&
+          navToggle.getAttribute('aria-expanded') === 'true'
+        ) {
+          closeNav();
+        }
+      });
+
+      window.addEventListener('resize', updateNavMode);
+      updateNavMode();
+    }
   </script>
 </body>
 </html>

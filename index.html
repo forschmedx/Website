@@ -14,26 +14,27 @@
     <nav class="nav">
       <div class="nav-inner container">
         <a class="brand" href="#top">
-          <img class="brand-logo" src="assessts/medx-logo.png" alt="Forsch MedX logo">
+          <span class="brand-badge">
+            <img class="brand-logo" src="assessts/medx-logo.png" alt="Forsch MedX logo">
+          </span>
+          <span class="brand-wordmark">
+            <span class="brand-line">Forsch<span class="brand-line-accent">MedX</span></span>
+            <span class="brand-tagline">Imagine | Initiate | Innovate</span>
+          </span>
         </a>
+        <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
         <ul class="nav-links">
+          <li><a href="#about">About Us</a></li>
           <li><a href="#focus">Focus Areas</a></li>
-          <li><a href="#trachease">TrachEase</a></li>
-          <li><a href="#support">Partners</a></li>
-          <li><a href="team.html">Our Team</a></li>
+          <li><a href="#trachease">Products</a></li>
+          <li><a href="#support">Contributors</a></li>
+          <li><a href="team.html">Team</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
-        <div class="nav-actions">
-          <label class="search-field" for="site-search">
-            <svg viewBox="0 0 24 24" fill="none">
-              <path d="m20 20-3.6-3.6m1.1-3.5a6.1 6.1 0 1 1-12.2 0 6.1 6.1 0 0 1 12.2 0z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            <input id="site-search" type="search" placeholder="Search Forsch MedX...">
-            <span class="shortcut">Ctrl&nbsp;+&nbsp;K</span>
-          </label>
-          <span class="nav-divider" aria-hidden="true"></span>
-          <a class="nav-button" href="#contact">Login / Sign Up</a>
-        </div>
       </div>
     </nav>
 
@@ -76,6 +77,40 @@
   </header>
 
   <main>
+    <section class="section container reveal" id="about">
+      <div class="section-head">
+        <p class="eyebrow">Who We Are</p>
+        <h2>We catalyze critical care breakthroughs</h2>
+        <p>
+          Forsch MedX is a healthcare innovation studio united by a shared mission: make intensive and acute care safer,
+          smarter, and more human. We blend frontline clinical insight with rapid engineering sprints to deliver solutions
+          that stay grounded in hospital realities.
+        </p>
+      </div>
+      <div class="about-grid">
+        <article class="about-card reveal" style="--delay: 0.08s;">
+          <h3>Clinical-first discovery</h3>
+          <p>
+            We co-create with ICU teams, mapping workflows and root causes before sketching a single prototype. Every build
+            starts with unmet patient and clinician needs.
+          </p>
+        </article>
+        <article class="about-card reveal" style="--delay: 0.16s;">
+          <h3>Rapid, rigorous prototyping</h3>
+          <p>
+            Our hardware, software, and bioscience pods iterate in parallel, pressure-testing ideas through simulation,
+            bench experiments, and pilot deployments.
+          </p>
+        </article>
+        <article class="about-card reveal" style="--delay: 0.24s;">
+          <h3>Trusted partnerships</h3>
+          <p>
+            Backed by leading incubators and hospital collaborators, we align grants, mentors, and manufacturing partners
+            to scale validated interventions responsibly.
+          </p>
+        </article>
+      </div>
+    </section>
     <section class="section container reveal" id="focus">
       <div class="section-head">
         <p class="eyebrow">What We Build</p>
@@ -120,54 +155,112 @@
       <div class="container trachease-overview">
         <div class="trachease-heading reveal" style="--delay: 0.12s;">
           <p class="eyebrow trachease-motto">Imagine Initiate Innovate</p>
-          <h3>Innovations</h3>
+          <h3>Products</h3>
         </div>
-        <div class="trachease-showcase reveal" style="--delay: 0.2s;">
-          <div class="trachease-summary">
-            <img class="trachease-logo" src="assessts/trachease-logo.png" alt="TrachEase logo">
-            <h4>TrachEase</h4>
-            <p>TrachEase is a smart solution designed to reduce ventilation associated pneumonia (VAP) in mechanically ventilated patients.</p>
-          </div>
-          <div class="trachease-media">
-            <video class="trachease-video" autoplay muted loop playsinline preload="metadata" poster="assessts/medx-logo.png">
-              <source src="assessts/Video.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-          </div>
+        <div class="product-duo reveal" style="--delay: 0.2s;">
+          <article class="product-card">
+            <div class="product-card__header">
+              <img class="product-card__logo" src="assessts/trachease-logo.png" alt="TrachEase logo">
+              <h4>TrachEase</h4>
+              <p>TrachEase is a smart solution designed to reduce ventilation associated pneumonia (VAP) in mechanically ventilated patients.</p>
+            </div>
+            <ul class="product-features">
+              <li>
+                <span class="feature-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.6"/>
+                    <path d="M12 8v4l2.4 1.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+                <div>
+                  <h5>Customized Frequency</h5>
+                  <p>Suction timing adapts to patient needs so care teams can tailor intervention frequency.</p>
+                </div>
+              </li>
+              <li>
+                <span class="feature-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M12 4 4 8v4c0 5 4 8.5 8 10 4-1.5 8-5 8-10V8l-8-4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                    <path d="M9.5 12.5 11 14l3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+                <div>
+                  <h5>Reduced Infection</h5>
+                  <p>Hands-free automation limits patient handling, lowering infection risk during airway care.</p>
+                </div>
+              </li>
+              <li>
+                <span class="feature-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <rect x="4.5" y="5" width="15" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/>
+                    <path d="M9 9h6m-6 4h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                  </svg>
+                </span>
+                <div>
+                  <h5>Hands-Free Procedure</h5>
+                  <p>Automated clearing keeps the airway unobstructed so clinicians can focus on critical decisions.</p>
+                </div>
+              </li>
+            </ul>
+            <div class="product-card__media">
+              <video class="product-video" autoplay muted loop playsinline preload="metadata" poster="assessts/medx-logo.png">
+                <source src="assessts/Video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </article>
+          <article class="product-card product-card--curaspext">
+            <div class="product-card__header">
+              <h4>CuraSpeXt</h4>
+              <p>CuraSpeXt prepares the world for pandemics with rapid biosurveillance that spots emerging threats before they spread.</p>
+            </div>
+            <ul class="product-features">
+              <li>
+                <span class="feature-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M4.5 12A7.5 7.5 0 0 1 12 4.5 7.5 7.5 0 0 1 19.5 12 7.5 7.5 0 0 1 12 19.5 7.5 7.5 0 0 1 4.5 12Z" stroke="currentColor" stroke-width="1.6"/>
+                    <path d="M12 7v5l3 1.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+                <div>
+                  <h5>Real-time biosurveillance</h5>
+                  <p>Continuous aerosol sensing tracks pathogens in critical hubs before clinical cases spike.</p>
+                </div>
+              </li>
+              <li>
+                <span class="feature-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M4 7h16M4 12h10M4 17h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                    <path d="M16 10.5 20 7l-4-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+                <div>
+                  <h5>Edge-to-cloud analytics</h5>
+                  <p>Secure pipelines push field signals into AI models that quantify risk in minutes.</p>
+                </div>
+              </li>
+              <li>
+                <span class="feature-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <circle cx="12" cy="12" r="7.5" stroke="currentColor" stroke-width="1.6"/>
+                    <path d="M12 4.5v15M4.5 12h15" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                  </svg>
+                </span>
+                <div>
+                  <h5>Global readiness dashboards</h5>
+                  <p>Actionable visualisations align public health, hospitals, and policy teams on response.</p>
+                </div>
+              </li>
+            </ul>
+            <div class="product-card__media">
+              <video class="product-video" autoplay muted loop playsinline preload="metadata" poster="assessts/medx-logo.png">
+                <source src="assessts/CuraSpeXt.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </article>
         </div>
-        <div class="trachease-benefits reveal" style="--delay: 0.28s;">
-          <article>
-            <span class="benefit-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none">
-                <circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.6"/>
-                <path d="M12 8v4l2.4 1.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </span>
-            <h5>Customized Frequency</h5>
-            <p>Suction timing adapts to patient needs so care teams can tailor intervention frequency.</p>
-          </article>
-          <article>
-            <span class="benefit-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none">
-                <path d="M12 4 4 8v4c0 5 4 8.5 8 10 4-1.5 8-5 8-10V8l-8-4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-                <path d="M9.5 12.5 11 14l3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </span>
-            <h5>Reduced Infection</h5>
-            <p>Hands-free automation limits patient handling, lowering infection risk during airway care.</p>
-          </article>
-          <article>
-            <span class="benefit-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none">
-                <rect x="4.5" y="5" width="15" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/>
-                <path d="M9 9h6m-6 4h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-              </svg>
-            </span>
-            <h5>Hands-Free Procedure</h5>
-            <p>Automated clearing keeps the airway unobstructed so clinicians can focus on critical decisions.</p>
-          </article>
-        </div>
-        <div class="trachease-cta-row reveal" style="--delay: 0.36s;">
+        <div class="product-cta-row reveal" style="--delay: 0.36s;">
           <a class="btn secondary trachease-contact" href="#contact">Connect with us for more details</a>
         </div>
       </div>
@@ -176,10 +269,131 @@
     <section class="supporters-section reveal" id="support">
       <div class="container supporters-inner">
         <p class="eyebrow supporters-eyebrow">Supported by</p>
-        <div class="supporters-logos">
-          <span class="supporter-logo">Startup India Seed Fund Scheme</span>
-          <span class="supporter-logo">Venture Center</span>
-          <span class="supporter-logo">VJTI-TBI</span>
+        <div class="supporters-marquee" aria-label="Strategic supporters">
+          <div class="supporters-track">
+            <article class="supporter-card" tabindex="0">
+              <div class="supporter-card__logo">
+                <img src="assessts/our_supporters/SISFS-Logo-for-website.webp" alt="Startup India Seed Fund Scheme logo">
+              </div>
+              <p class="supporter-card__name">Startup India Seed Fund Scheme</p>
+              <div class="supporter-card__popover">
+                <h4>Startup India Seed Fund Scheme</h4>
+                <p>Seed-stage capital that enables us to translate idea-stage builds into validated medtech pilots.</p>
+              </div>
+            </article>
+            <article class="supporter-card" tabindex="0">
+              <div class="supporter-card__logo">
+                <img src="assessts/our_supporters/Venture-center-logo-website.webp" alt="Venture Center logo">
+              </div>
+              <p class="supporter-card__name">Venture Center</p>
+              <div class="supporter-card__popover">
+                <h4>Venture Center</h4>
+                <p>Incubation, labs, and mentor network helping us iterate hardware and bioscience faster.</p>
+              </div>
+            </article>
+            <article class="supporter-card" tabindex="0">
+              <div class="supporter-card__logo">
+                <img src="assessts/our_supporters/VJTI-TBI-logo-for-website.webp" alt="VJTI-TBI logo">
+              </div>
+              <p class="supporter-card__name">VJTI-TBI</p>
+              <div class="supporter-card__popover">
+                <h4>VJTI Technology Business Incubator</h4>
+                <p>Engineering expertise and prototyping support to industrialise our critical care platforms.</p>
+              </div>
+            </article>
+            <article class="supporter-card" tabindex="0">
+              <div class="supporter-card__logo">
+                <img src="assessts/our_supporters/AICCCBM.webp" alt="AIC-CCMB logo">
+              </div>
+              <p class="supporter-card__name">AIC-CCMB</p>
+              <div class="supporter-card__popover">
+                <h4>Atal Incubation Centre &ndash; CCMB</h4>
+                <p>Advanced wet-lab access and translational research alliance powering our infection control work.</p>
+              </div>
+            </article>
+            <article class="supporter-card" tabindex="0">
+              <div class="supporter-card__logo">
+                <img src="assessts/our_supporters/BIRAC.webp" alt="BIRAC logo">
+              </div>
+              <p class="supporter-card__name">BIRAC</p>
+              <div class="supporter-card__popover">
+                <h4>Biotechnology Industry Research Assistance Council</h4>
+                <p>Grant-backed validation for scaling affordable medtech that addresses national healthcare gaps.</p>
+              </div>
+            </article>
+            <article class="supporter-card" tabindex="0">
+              <div class="supporter-card__logo">
+                <img src="assessts/our_supporters/NIDHI-PRAYAS.webp" alt="NIDHI PRAYAS logo">
+              </div>
+              <p class="supporter-card__name">NIDHI PRAYAS</p>
+              <div class="supporter-card__popover">
+                <h4>NIDHI PRAYAS</h4>
+                <p>Rapid prototyping grant that underwrote first-of-its-kind airway management trials.</p>
+              </div>
+            </article>
+
+            <!-- Duplicate set for seamless marquee -->
+            <article class="supporter-card" tabindex="-1" aria-hidden="true">
+              <div class="supporter-card__logo">
+                <img src="assessts/our_supporters/SISFS-Logo-for-website.webp" alt="">
+              </div>
+              <p class="supporter-card__name">Startup India Seed Fund Scheme</p>
+              <div class="supporter-card__popover">
+                <h4>Startup India Seed Fund Scheme</h4>
+                <p>Seed-stage capital that enables us to translate idea-stage builds into validated medtech pilots.</p>
+              </div>
+            </article>
+            <article class="supporter-card" tabindex="-1" aria-hidden="true">
+              <div class="supporter-card__logo">
+                <img src="assessts/our_supporters/Venture-center-logo-website.webp" alt="">
+              </div>
+              <p class="supporter-card__name">Venture Center</p>
+              <div class="supporter-card__popover">
+                <h4>Venture Center</h4>
+                <p>Incubation, labs, and mentor network helping us iterate hardware and bioscience faster.</p>
+              </div>
+            </article>
+            <article class="supporter-card" tabindex="-1" aria-hidden="true">
+              <div class="supporter-card__logo">
+                <img src="assessts/our_supporters/VJTI-TBI-logo-for-website.webp" alt="">
+              </div>
+              <p class="supporter-card__name">VJTI-TBI</p>
+              <div class="supporter-card__popover">
+                <h4>VJTI Technology Business Incubator</h4>
+                <p>Engineering expertise and prototyping support to industrialise our critical care platforms.</p>
+              </div>
+            </article>
+            <article class="supporter-card" tabindex="-1" aria-hidden="true">
+              <div class="supporter-card__logo">
+                <img src="assessts/our_supporters/AICCCBM.webp" alt="">
+              </div>
+              <p class="supporter-card__name">AIC-CCMB</p>
+              <div class="supporter-card__popover">
+                <h4>Atal Incubation Centre &ndash; CCMB</h4>
+                <p>Advanced wet-lab access and translational research alliance powering our infection control work.</p>
+              </div>
+            </article>
+            <article class="supporter-card" tabindex="-1" aria-hidden="true">
+              <div class="supporter-card__logo">
+                <img src="assessts/our_supporters/BIRAC.webp" alt="">
+              </div>
+              <p class="supporter-card__name">BIRAC</p>
+              <div class="supporter-card__popover">
+                <h4>Biotechnology Industry Research Assistance Council</h4>
+                <p>Grant-backed validation for scaling affordable medtech that addresses national healthcare gaps.</p>
+              </div>
+            </article>
+            <article class="supporter-card" tabindex="-1" aria-hidden="true">
+              <div class="supporter-card__logo">
+                <img src="assessts/our_supporters/NIDHI-PRAYAS.webp" alt="">
+              </div>
+              <p class="supporter-card__name">NIDHI PRAYAS</p>
+              <div class="supporter-card__popover">
+                <h4>NIDHI PRAYAS</h4>
+                <p>Rapid prototyping grant that underwrote first-of-its-kind airway management trials.</p>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
     </section>
@@ -244,7 +458,7 @@
         </div>
       </div>
       <nav class="footer-nav" aria-label="Footer">
-        <a href="#trachease">Innovations</a>
+        <a href="#trachease">Products</a>
         <a href="#focus">Focus</a>
         <a href="#contact">Who We Are</a>
         <a href="team.html">Team</a>
@@ -279,15 +493,71 @@
     } else {
       revealElements.forEach(element => element.classList.add('reveal-visible'));
     }
+
+    const nav = document.querySelector('.nav');
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelectorAll('.nav-links a');
+
+    if (nav && navToggle) {
+      const closeNav = () => {
+        navToggle.setAttribute('aria-expanded', 'false');
+        navToggle.setAttribute('aria-label', 'Open menu');
+        nav.classList.remove('nav-open');
+        document.body.classList.remove('nav-open');
+      };
+
+      const updateNavMode = () => {
+        const useDrawer = window.innerWidth <= 1200;
+        nav.classList.toggle('nav-drawer', useDrawer);
+        navToggle.hidden = !useDrawer;
+        if (!useDrawer) {
+          closeNav();
+        }
+      };
+
+      navToggle.addEventListener('click', () => {
+        if (!nav.classList.contains('nav-drawer')) {
+          return;
+        }
+
+        const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+        navToggle.setAttribute('aria-expanded', String(!isExpanded));
+        navToggle.setAttribute('aria-label', isExpanded ? 'Open menu' : 'Close menu');
+        nav.classList.toggle('nav-open', !isExpanded);
+        document.body.classList.toggle('nav-open', !isExpanded);
+      });
+
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          if (nav.classList.contains('nav-drawer') && navToggle.getAttribute('aria-expanded') === 'true') {
+            closeNav();
+          }
+        });
+      });
+
+      document.addEventListener('click', event => {
+        if (
+          nav.classList.contains('nav-drawer') &&
+          navToggle.getAttribute('aria-expanded') === 'true' &&
+          !nav.contains(event.target)
+        ) {
+          closeNav();
+        }
+      });
+
+      window.addEventListener('keydown', event => {
+        if (
+          event.key === 'Escape' &&
+          nav.classList.contains('nav-drawer') &&
+          navToggle.getAttribute('aria-expanded') === 'true'
+        ) {
+          closeNav();
+        }
+      });
+
+      window.addEventListener('resize', updateNavMode);
+      updateNavMode();
+    }
   </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
