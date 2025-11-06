@@ -15,7 +15,7 @@
       <div class="nav-inner container">
         <a class="brand" href="index.html#top">
           <span class="brand-badge">
-            <img class="brand-logo" src="assessts/medx-logo.png" alt="Forsch MedX logo">
+            <img class="brand-logo" src="assessts/medx-logo-2.png" alt="Forsch MedX logo">
           </span>
           <span class="brand-wordmark">
             <span class="brand-line">Forsch<span class="brand-line-accent">MedX</span></span>
@@ -28,7 +28,7 @@
           <span></span>
         </button>
         <ul class="nav-links">
-          <li><a href="index.html#about">About Us</a></li>
+          <li><a href="about.html">About Us</a></li>
           <li><a href="index.html#focus">Focus Areas</a></li>
           <li><a href="index.html#trachease">Products</a></li>
           <li><a href="index.html#support">Contributors</a></li>
@@ -57,111 +57,134 @@
   </header>
 
   <main class="team-main">
-    <section class="profile-section" id="team">
-      <div class="profile-inner">
-        <div class="profile-photo" aria-hidden="true">AG</div>
-        <div class="profile-content">
-          <p class="profile-role">Founder &amp; CEO</p>
-          <h2>Abhishek Gaikar</h2>
-          <p>
-            Abhishek drives the big picture—translating clinical pain points into testable med-tech,
-            orchestrating hardware, software, and AI so TrachEase and Pre-ROP X move from idea to
-            validated pilots at speed. He keeps hospital partners, mentors, and grants aligned to a
-            realistic roadmap.
-          </p>
-          <ul class="profile-focus">
-            <li>Product strategy</li>
-            <li>R&amp;D direction</li>
-            <li>Partnerships &amp; grants</li>
-            <li>Clinical collaborations</li>
-          </ul>
+    <section class="team-feature" id="team">
+      <div class="team-feature__namecard">
+        <div class="team-avatar">
+          <img src="assessts/team/Abhishek%20Gaikar.jpg" alt="Portrait of Abhishek Gaikar">
         </div>
+        <p class="team-name">Abhishek Gaikar</p>
+        <span class="team-role">Founder &amp; CEO</span>
       </div>
+      <article class="team-feature__details">
+        <h2>About Abhishek</h2>
+        <p>
+          Abhishek drives the big picture - translating frontline insights into testable med-tech,
+          orchestrating hardware, software, and AI so TrachEase and CuraSpeXt move from idea to validated pilots.
+          He keeps hospital partners, mentors, and grants aligned to an ambitious yet realistic roadmap.
+        </p>
+        <div class="team-tags">
+          <span>Product strategy</span>
+          <span>Clinical partnerships</span>
+          <span>R&amp;D leadership</span>
+          <span>Go-to-market</span>
+        </div>
+      </article>
     </section>
 
-    <section class="profile-section profile-section--reverse">
-      <div class="profile-inner">
-        <div class="profile-photo" aria-hidden="true">N</div>
-        <div class="profile-content">
-          <p class="profile-role">Embedded Systems &amp; Hardware Lead</p>
-          <h2>Niraj</h2>
-          <p>
-            Niraj owns electronics bring-up, sensor integration, and dependable control loops on
-            STM32/Arduino. He designs harnesses and jigs, debugs I²C/UART/SPI, and delivers clean
-            power plus signal integrity so trials and data logging stay rock-solid.
-          </p>
-          <ul class="profile-focus">
-            <li>MCU firmware</li>
-            <li>I²C / UART / SPI</li>
-            <li>Power &amp; signal integrity</li>
-            <li>Test rigs &amp; validation</li>
-          </ul>
+    <section class="team-grid" aria-label="Leadership team">
+      <button class="team-card" type="button"
+        aria-label="Akanksha - Microbiology &amp; Clinical Research"
+        data-name="Akanksha"
+        data-role="Microbiology &amp; Clinical Research"
+        data-bio="Designs lab protocols, matches device outputs with microbiology readouts, and keeps ISO-aligned documentation airtight for studies, grants, and ethics submissions."
+        data-linkedin="https://www.linkedin.com/in/akanksha"
+        data-tags="MICROBIOLOGY PROTOCOLS|CLINICAL RESEARCH|QUALITY SYSTEMS"
+        data-photo="assessts/team/Akanksha.jpg">
+        <div class="team-card__photo">
+          <img src="assessts/team/Akanksha.jpg" alt="Portrait of Akanksha">
         </div>
-      </div>
+        <span class="team-card__name">Akanksha</span>
+        <span class="team-card__role">Microbiology &amp; Clinical Research</span>
+      </button>
+      <button class="team-card" type="button"
+        aria-label="Geet Patil - Clinical Operations &amp; Partnerships"
+        data-name="Geet Patil"
+        data-role="Clinical Operations &amp; Partnerships"
+        data-bio="Builds relationships with ICU champions, coordinates multi-site pilots, and captures clinician feedback that guides the next sprint of product improvements."
+        data-linkedin="https://www.linkedin.com/in/geet-patil"
+        data-tags="CLINICAL PILOTS|PARTNERSHIPS|OPERATIONS SCALE"
+        data-photo="assessts/team/Geet%20Patil.jpg">
+        <div class="team-card__photo">
+          <img src="assessts/team/Geet%20Patil.jpg" alt="Portrait of Geet Patil">
+        </div>
+        <span class="team-card__name">Geet Patil</span>
+        <span class="team-card__role">Clinical Operations &amp; Partnerships</span>
+      </button>
     </section>
 
-    <section class="profile-section">
-      <div class="profile-inner">
-        <div class="profile-photo" aria-hidden="true">H</div>
-        <div class="profile-content">
-          <p class="profile-role">Design, Modelling &amp; 3D Printing</p>
-          <h2>Hitesh</h2>
-          <p>
-            Hitesh turns napkin sketches into manufacturable parts—housings, fixtures, adapters, and
-            flow components. He optimises CAD for tolerance, prepares print-ready files, and iterates
-            fast to de-risk mechanics before transfer to tooling.
-          </p>
-          <ul class="profile-focus">
-            <li>CAD (DfAM)</li>
-            <li>Tolerances &amp; fit</li>
-            <li>FDM / SLA printing</li>
-            <li>Fixtures &amp; enclosures</li>
-          </ul>
-        </div>
+    <section class="team-inventors" aria-labelledby="inventors-heading">
+      <h2 id="inventors-heading">Our Inventors</h2>
+      <div class="team-inventors__grid">
+        <button class="team-card team-card--compact" type="button"
+          aria-label="Niraj Limbkar - Embedded Systems &amp; Hardware"
+          data-name="Niraj Limbkar"
+          data-role="Embedded Systems &amp; Hardware"
+          data-bio="Owns sensor integration, dependable control loops, and power integrity so clinical data streams stay rock solid."
+          data-linkedin="https://www.linkedin.com/in/niraj-limbkar"
+          data-tags="EMBEDDED SYSTEMS|SENSOR INTEGRATION|CONTROL LOOPS"
+          data-photo="assessts/team/Niraj%20Limbkar.jpg">
+          <div class="team-card__photo">
+            <img src="assessts/team/Niraj%20Limbkar.jpg" alt="Portrait of Niraj Limbkar">
+          </div>
+          <span class="team-card__name">Niraj Limbkar</span>
+          <span class="team-card__role">Embedded Systems &amp; Hardware</span>
+        </button>
+        <button class="team-card team-card--compact" type="button"
+          aria-label="Hitesh Gamare - Design &amp; Rapid Prototyping"
+          data-name="Hitesh Gamare"
+          data-role="Design &amp; Rapid Prototyping"
+          data-bio="Converts sketches into manufacturable parts - optimising CAD, printing fixtures, and de-risking mechanics fast."
+          data-linkedin="https://www.linkedin.com/in/hitesh-gamare"
+          data-tags="INDUSTRIAL DESIGN|RAPID PROTOTYPING|MANUFACTURING"
+          data-photo="assessts/team/Hitesh%20Gamare.jpg">
+          <div class="team-card__photo">
+            <img src="assessts/team/Hitesh%20Gamare.jpg" alt="Portrait of Hitesh Gamare">
+          </div>
+          <span class="team-card__name">Hitesh Gamare</span>
+          <span class="team-card__role">Design &amp; Rapid Prototyping</span>
+        </button>
+        <button class="team-card team-card--compact" type="button"
+          aria-label="Atharva Patil - Software &amp; Cloud Integrations"
+          data-name="Atharva Patil"
+          data-role="Software &amp; Cloud Integrations"
+          data-bio="Builds the glue between device and cloud - MQTT topics, lightweight APIs, dashboards, and dependable data exports."
+          data-linkedin="https://www.linkedin.com/in/atharva-patil"
+          data-tags="CLOUD DASHBOARDS|API DESIGN|DATA OPERATIONS"
+          data-photo="assessts/team/Atharva%20Patil.jpg">
+          <div class="team-card__photo">
+            <img src="assessts/team/Atharva%20Patil.jpg" alt="Portrait of Atharva Patil">
+          </div>
+          <span class="team-card__name">Atharva Patil</span>
+          <span class="team-card__role">Software &amp; Cloud Integrations</span>
+        </button>
       </div>
     </section>
-
-    <section class="profile-section profile-section--reverse">
-      <div class="profile-inner">
-        <div class="profile-photo" aria-hidden="true">A</div>
-        <div class="profile-content">
-          <p class="profile-role">Software, Website &amp; MQTT</p>
-          <h2>Atharva</h2>
-          <p>
-            Atharva builds the glue between device and cloud—MQTT topics, lightweight APIs, and crisp
-            dashboards. He converts raw sensor streams into clear visuals, hardens auth and error
-            paths, and ships data exports the teams depend on mid-trial.
-          </p>
-          <ul class="profile-focus">
-            <li>Frontend dashboards</li>
-            <li>MQTT pipelines</li>
-            <li>Lightweight APIs</li>
-            <li>Data logging &amp; exports</li>
-          </ul>
-        </div>
+  
+  <div class="team-modal" hidden>
+    <div class="team-modal__backdrop" data-team-modal-close></div>
+    <div class="team-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="team-modal-title">
+      <button class="team-modal__close" type="button" data-team-modal-close aria-label="Close dialog">&times;</button>
+      <div class="team-modal__layout">
+        <aside class="team-modal__profile">
+          <div class="team-modal__avatar">
+            <img class="team-modal__photo" src="" alt="" hidden>
+            <span class="team-modal__initials" aria-hidden="true" hidden></span>
+          </div>
+          <div class="team-modal__identity">
+            <h3 class="team-modal__name" id="team-modal-name"></h3>
+            <p class="team-modal__role"></p>
+          </div>
+          <a class="team-modal__linkedin" href="#" target="_blank" rel="noreferrer" hidden>View LinkedIn profile</a>
+        </aside>
+        <article class="team-modal__details">
+          <h2 class="team-modal__title" id="team-modal-title"></h2>
+          <p class="team-modal__bio"></p>
+          <div class="team-modal__tags" hidden></div>
+        </article>
       </div>
-    </section>
-
-    <section class="profile-section">
-      <div class="profile-inner">
-        <div class="profile-photo" aria-hidden="true">AK</div>
-        <div class="profile-content">
-          <p class="profile-role">Microbiology &amp; Clinical Research</p>
-          <h2>Akanksha</h2>
-          <p>
-            Akanksha designs lab protocols, matches device outputs with microbiology readouts, and
-            keeps ISO-aligned documentation airtight for studies, grants, and ethics submissions.
-          </p>
-          <ul class="profile-focus">
-            <li>Lab validation</li>
-            <li>SOPs &amp; records</li>
-            <li>Study design</li>
-            <li>Reporting for grants / ethics</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-  </main>
+    </div>
+  </div>
+</main>
 
   <footer class="footer">
     <div class="footer-watermark" aria-hidden="true"></div>
@@ -176,6 +199,7 @@
       <nav class="footer-nav" aria-label="Footer">
         <a href="index.html#trachease">Products</a>
         <a href="index.html#focus">Focus</a>
+        <a href="about.html">About</a>
         <a href="#team">Team</a>
         <a href="index.html#contact">Contact</a>
       </nav>
@@ -251,6 +275,168 @@
       window.addEventListener('resize', updateNavMode);
       updateNavMode();
     }
+
+    const teamCards = document.querySelectorAll('.team-card');
+    const teamModal = document.querySelector('.team-modal');
+
+    if (teamCards.length && teamModal) {
+      const modalDialog = teamModal.querySelector('.team-modal__dialog');
+      const modalName = teamModal.querySelector('.team-modal__name');
+      const modalRole = teamModal.querySelector('.team-modal__role');
+      const modalBio = teamModal.querySelector('.team-modal__bio');
+      const modalAvatar = teamModal.querySelector('.team-modal__avatar');
+      const modalPhoto = teamModal.querySelector('.team-modal__photo');
+      const modalInitials = teamModal.querySelector('.team-modal__initials');
+      const modalTitle = teamModal.querySelector('.team-modal__title');
+      const modalLinkedIn = teamModal.querySelector('.team-modal__linkedin');
+      const modalTags = teamModal.querySelector('.team-modal__tags');
+      const closeTriggers = teamModal.querySelectorAll('[data-team-modal-close]');
+      let activeCard = null;
+
+      const closeModal = () => {
+        if (teamModal.hasAttribute('hidden')) {
+          return;
+        }
+        teamModal.setAttribute('hidden', '');
+        document.body.classList.remove('team-modal-open');
+        if (modalPhoto) {
+          modalPhoto.src = '';
+          modalPhoto.alt = '';
+          modalPhoto.setAttribute('hidden', '');
+        }
+        if (modalInitials) {
+          modalInitials.textContent = '';
+          modalInitials.setAttribute('hidden', '');
+        }
+        if (modalAvatar) {
+          modalAvatar.classList.remove('team-modal__avatar--no-photo');
+        }
+        if (modalTitle) {
+          modalTitle.textContent = '';
+        }
+        if (modalLinkedIn) {
+          modalLinkedIn.href = '#';
+          modalLinkedIn.setAttribute('hidden', '');
+        }
+        if (modalTags) {
+          modalTags.innerHTML = '';
+          modalTags.setAttribute('hidden', '');
+        }
+        if (activeCard) {
+          activeCard.focus();
+          activeCard = null;
+        }
+      };
+
+      const openModal = card => {
+        activeCard = card;
+        const personName = card.dataset.name || '';
+        if (modalName) {
+          modalName.textContent = personName;
+        }
+        if (modalTitle) {
+          modalTitle.textContent = personName ? `About ${personName}` : 'Team Member';
+        }
+        if (modalRole) {
+          modalRole.textContent = card.dataset.role || '';
+        }
+        if (modalBio) {
+          modalBio.textContent = card.dataset.bio || '';
+        }
+        if (modalPhoto) {
+          const photoSrc = card.dataset.photo;
+          if (photoSrc) {
+            modalPhoto.src = photoSrc;
+            modalPhoto.alt = `Portrait of ${card.dataset.name || 'team member'}`;
+            modalPhoto.removeAttribute('hidden');
+            if (modalInitials) {
+              modalInitials.textContent = '';
+              modalInitials.setAttribute('hidden', '');
+            }
+            if (modalAvatar) {
+              modalAvatar.classList.remove('team-modal__avatar--no-photo');
+            }
+          } else {
+            modalPhoto.src = '';
+            modalPhoto.alt = '';
+            modalPhoto.setAttribute('hidden', '');
+            if (modalAvatar) {
+              modalAvatar.classList.add('team-modal__avatar--no-photo');
+            }
+            if (modalInitials) {
+              const initials = (card.dataset.name || '').split(' ').map(part => part[0] || '').join('').slice(0, 2).toUpperCase();
+              modalInitials.textContent = initials;
+              modalInitials.removeAttribute('hidden');
+            }
+          }
+        }
+        if (modalLinkedIn) {
+          const link = card.dataset.linkedin;
+          if (link) {
+            modalLinkedIn.href = link;
+            modalLinkedIn.removeAttribute('hidden');
+          } else {
+             modalLinkedIn.href = '#';
+             modalLinkedIn.setAttribute('hidden', '');
+          }
+        }
+        if (modalTags) {
+          modalTags.innerHTML = '';
+          const tags = (card.dataset.tags || '')
+            .split('|')
+            .map(tag => tag.trim())
+            .filter(Boolean);
+          if (tags.length) {
+            const fragment = document.createDocumentFragment();
+            tags.forEach(tag => {
+              const chip = document.createElement('span');
+              chip.textContent = tag;
+              fragment.appendChild(chip);
+            });
+            modalTags.appendChild(fragment);
+            modalTags.removeAttribute('hidden');
+          } else {
+            modalTags.setAttribute('hidden', '');
+          }
+        }
+        teamModal.removeAttribute('hidden');
+        document.body.classList.add('team-modal-open');
+        if (modalDialog) {
+          modalDialog.focus();
+        }
+      };
+
+      teamCards.forEach(card => {
+        card.addEventListener('click', () => openModal(card));
+      });
+
+      closeTriggers.forEach(trigger => {
+        trigger.addEventListener('click', closeModal);
+      });
+
+      teamModal.addEventListener('click', event => {
+        if (event.target === teamModal || event.target.dataset.teamModalClose !== undefined) {
+          closeModal();
+        }
+      });
+
+      document.addEventListener('keydown', event => {
+        if (event.key === 'Escape') {
+          closeModal();
+        }
+      });
+
+      if (modalDialog) {
+        modalDialog.setAttribute('tabindex', '-1');
+      }
+    }
   </script>
 </body>
 </html>
+
+
+
+
+
+
+
