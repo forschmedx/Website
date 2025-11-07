@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -160,30 +160,6 @@
       </div>
     </section>
   
-  <div class="team-modal" hidden>
-    <div class="team-modal__backdrop" data-team-modal-close></div>
-    <div class="team-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="team-modal-title">
-      <button class="team-modal__close" type="button" data-team-modal-close aria-label="Close dialog">&times;</button>
-      <div class="team-modal__layout">
-        <aside class="team-modal__profile">
-          <div class="team-modal__avatar">
-            <img class="team-modal__photo" src="" alt="" hidden>
-            <span class="team-modal__initials" aria-hidden="true" hidden></span>
-          </div>
-          <div class="team-modal__identity">
-            <h3 class="team-modal__name" id="team-modal-name"></h3>
-            <p class="team-modal__role"></p>
-          </div>
-          <a class="team-modal__linkedin" href="#" target="_blank" rel="noreferrer" hidden>View LinkedIn profile</a>
-        </aside>
-        <article class="team-modal__details">
-          <h2 class="team-modal__title" id="team-modal-title"></h2>
-          <p class="team-modal__bio"></p>
-          <div class="team-modal__tags" hidden></div>
-        </article>
-      </div>
-    </div>
-  </div>
 </main>
 
   <footer class="footer">
@@ -277,159 +253,132 @@
     }
 
     const teamCards = document.querySelectorAll('.team-card');
-    const teamModal = document.querySelector('.team-modal');
+    const overlay = document.createElement('div');
+    overlay.className = 'team-panel-overlay';
+    overlay.innerHTML = `
+      <div class="team-panel" role="dialog" aria-modal="true" aria-labelledby="team-panel-name" tabindex="-1">
+        <div class="team-panel__photo">
+          <img src="" alt="" class="team-panel__img" hidden>
+          <span class="team-panel__initials" hidden></span>
+          <div class="team-panel__nameplate">
+            <p class="team-panel__nameplate-name"></p>
+            <p class="team-panel__nameplate-role"></p>
+          </div>
+          <button class="team-panel__linkedin-btn" type="button" aria-label="View LinkedIn profile">
+            <span aria-hidden="true">in</span>
+          </button>
+        </div>
+        <div class="team-panel__body">
+          <p class="team-panel__eyebrow">About Them</p>
+          <h2 class="team-panel__name" id="team-panel-name"></h2>
+          <p class="team-panel__role"></p>
+          <p class="team-panel__bio"></p>
+          <div class="team-panel__tags" hidden></div>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(overlay);
 
-    if (teamCards.length && teamModal) {
-      const modalDialog = teamModal.querySelector('.team-modal__dialog');
-      const modalName = teamModal.querySelector('.team-modal__name');
-      const modalRole = teamModal.querySelector('.team-modal__role');
-      const modalBio = teamModal.querySelector('.team-modal__bio');
-      const modalAvatar = teamModal.querySelector('.team-modal__avatar');
-      const modalPhoto = teamModal.querySelector('.team-modal__photo');
-      const modalInitials = teamModal.querySelector('.team-modal__initials');
-      const modalTitle = teamModal.querySelector('.team-modal__title');
-      const modalLinkedIn = teamModal.querySelector('.team-modal__linkedin');
-      const modalTags = teamModal.querySelector('.team-modal__tags');
-      const closeTriggers = teamModal.querySelectorAll('[data-team-modal-close]');
-      let activeCard = null;
+    const panel = overlay.querySelector('.team-panel');
+    const imgEl = overlay.querySelector('.team-panel__img');
+    const initialsEl = overlay.querySelector('.team-panel__initials');
+    const nameEl = overlay.querySelector('.team-panel__name');
+    const roleEl = overlay.querySelector('.team-panel__role');
+    const bioEl = overlay.querySelector('.team-panel__bio');
+    const tagsEl = overlay.querySelector('.team-panel__tags');
+    const linkedBtn = overlay.querySelector('.team-panel__linkedin-btn');
+    const nameplateName = overlay.querySelector('.team-panel__nameplate-name');
+    const nameplateRole = overlay.querySelector('.team-panel__nameplate-role');
+    let activeTrigger = null;
 
-      const closeModal = () => {
-        if (teamModal.hasAttribute('hidden')) {
-          return;
-        }
-        teamModal.setAttribute('hidden', '');
-        document.body.classList.remove('team-modal-open');
-        if (modalPhoto) {
-          modalPhoto.src = '';
-          modalPhoto.alt = '';
-          modalPhoto.setAttribute('hidden', '');
-        }
-        if (modalInitials) {
-          modalInitials.textContent = '';
-          modalInitials.setAttribute('hidden', '');
-        }
-        if (modalAvatar) {
-          modalAvatar.classList.remove('team-modal__avatar--no-photo');
-        }
-        if (modalTitle) {
-          modalTitle.textContent = '';
-        }
-        if (modalLinkedIn) {
-          modalLinkedIn.href = '#';
-          modalLinkedIn.setAttribute('hidden', '');
-        }
-        if (modalTags) {
-          modalTags.innerHTML = '';
-          modalTags.setAttribute('hidden', '');
-        }
-        if (activeCard) {
-          activeCard.focus();
-          activeCard = null;
-        }
-      };
+    const openPanel = card => {
+      const { name = '', role = '', bio = '', linkedin = '', photo = '', tags = '' } = card.dataset;
+      nameEl.textContent = name;
+      roleEl.textContent = role;
+      bioEl.textContent = bio;
+      nameplateName.textContent = name.toUpperCase();
+      nameplateRole.textContent = role;
 
-      const openModal = card => {
-        activeCard = card;
-        const personName = card.dataset.name || '';
-        if (modalName) {
-          modalName.textContent = personName;
-        }
-        if (modalTitle) {
-          modalTitle.textContent = personName ? `About ${personName}` : 'Team Member';
-        }
-        if (modalRole) {
-          modalRole.textContent = card.dataset.role || '';
-        }
-        if (modalBio) {
-          modalBio.textContent = card.dataset.bio || '';
-        }
-        if (modalPhoto) {
-          const photoSrc = card.dataset.photo;
-          if (photoSrc) {
-            modalPhoto.src = photoSrc;
-            modalPhoto.alt = `Portrait of ${card.dataset.name || 'team member'}`;
-            modalPhoto.removeAttribute('hidden');
-            if (modalInitials) {
-              modalInitials.textContent = '';
-              modalInitials.setAttribute('hidden', '');
-            }
-            if (modalAvatar) {
-              modalAvatar.classList.remove('team-modal__avatar--no-photo');
-            }
-          } else {
-            modalPhoto.src = '';
-            modalPhoto.alt = '';
-            modalPhoto.setAttribute('hidden', '');
-            if (modalAvatar) {
-              modalAvatar.classList.add('team-modal__avatar--no-photo');
-            }
-            if (modalInitials) {
-              const initials = (card.dataset.name || '').split(' ').map(part => part[0] || '').join('').slice(0, 2).toUpperCase();
-              modalInitials.textContent = initials;
-              modalInitials.removeAttribute('hidden');
-            }
-          }
-        }
-        if (modalLinkedIn) {
-          const link = card.dataset.linkedin;
-          if (link) {
-            modalLinkedIn.href = link;
-            modalLinkedIn.removeAttribute('hidden');
-          } else {
-             modalLinkedIn.href = '#';
-             modalLinkedIn.setAttribute('hidden', '');
-          }
-        }
-        if (modalTags) {
-          modalTags.innerHTML = '';
-          const tags = (card.dataset.tags || '')
-            .split('|')
-            .map(tag => tag.trim())
-            .filter(Boolean);
-          if (tags.length) {
-            const fragment = document.createDocumentFragment();
-            tags.forEach(tag => {
-              const chip = document.createElement('span');
-              chip.textContent = tag;
-              fragment.appendChild(chip);
-            });
-            modalTags.appendChild(fragment);
-            modalTags.removeAttribute('hidden');
-          } else {
-            modalTags.setAttribute('hidden', '');
-          }
-        }
-        teamModal.removeAttribute('hidden');
-        document.body.classList.add('team-modal-open');
-        if (modalDialog) {
-          modalDialog.focus();
-        }
-      };
-
-      teamCards.forEach(card => {
-        card.addEventListener('click', () => openModal(card));
-      });
-
-      closeTriggers.forEach(trigger => {
-        trigger.addEventListener('click', closeModal);
-      });
-
-      teamModal.addEventListener('click', event => {
-        if (event.target === teamModal || event.target.dataset.teamModalClose !== undefined) {
-          closeModal();
-        }
-      });
-
-      document.addEventListener('keydown', event => {
-        if (event.key === 'Escape') {
-          closeModal();
-        }
-      });
-
-      if (modalDialog) {
-        modalDialog.setAttribute('tabindex', '-1');
+      if (photo) {
+        imgEl.src = photo;
+        imgEl.alt = `${name || 'Team member'} portrait`;
+        imgEl.hidden = false;
+        initialsEl.hidden = true;
+      } else {
+        imgEl.hidden = true;
+        const initials = (name || '').split(' ').map(p => p[0] || '').join('').slice(0, 2).toUpperCase();
+        initialsEl.textContent = initials || 'FM';
+        initialsEl.hidden = false;
       }
-    }
+
+      const tagList = (tags || '').split('|').map(tag => tag.trim()).filter(Boolean);
+      tagsEl.innerHTML = '';
+      if (tagList.length) {
+        const fragment = document.createDocumentFragment();
+        tagList.forEach(tag => {
+          const span = document.createElement('span');
+          span.textContent = tag;
+          fragment.appendChild(span);
+        });
+        tagsEl.appendChild(fragment);
+        tagsEl.hidden = false;
+      } else {
+        tagsEl.hidden = true;
+      }
+
+      linkedBtn.onclick = () => {
+        if (linkedin) {
+          window.open(linkedin, '_blank', 'noreferrer');
+        }
+      };
+      linkedBtn.hidden = !linkedin;
+
+      overlay.classList.add('is-visible');
+      document.body.classList.add('team-panel-open');
+      panel.focus();
+    };
+
+    const closePanel = () => {
+      overlay.classList.remove('is-visible');
+      document.body.classList.remove('team-panel-open');
+      if (activeTrigger) {
+        activeTrigger.focus();
+        activeTrigger = null;
+      }
+    };
+
+    document.addEventListener('click', event => {
+      const card = event.target.closest('.team-card');
+      if (!card) {
+        if (overlay.classList.contains('is-visible') && !panel.contains(event.target)) {
+          closePanel();
+        }
+        return;
+      }
+      activeTrigger = card;
+      openPanel(card);
+    });
+
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        const card = event.target.closest('.team-card');
+        if (card) {
+          event.preventDefault();
+          activeTrigger = card;
+          openPanel(card);
+        }
+      }
+      if (event.key === 'Escape' && overlay.classList.contains('is-visible')) {
+        closePanel();
+      }
+    });
+
+    overlay.addEventListener('click', event => {
+      if (event.target === overlay) {
+        closePanel();
+      }
+    });
+
   </script>
 </body>
 </html>

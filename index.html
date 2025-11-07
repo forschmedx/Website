@@ -57,23 +57,61 @@
         </div>
       </div>
     </section>
-    <div class="hero-highlights container reveal" style="--delay: 0.28s;">
-      <div class="hero-highlight reveal" style="--delay: 0.34s;">
-        <h3>3</h3>
-        <p>Core innovation verticals</p>
-        <span>Medical Devices, Advanced Diagnostics, Platform Technology</span>
+    <section class="hero-focus reveal" style="--delay: 0.28s;">
+      <div class="hero-focus__wave" aria-hidden="true">
+        <svg viewBox="0 0 1440 180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+          <path d="M0 120L60 108C120 96 240 72 360 66C480 60 600 72 720 78C840 84 960 84 1080 60C1200 36 1320 -12 1380 -36L1440 -60V180H1380C1320 180 1200 180 1080 180C960 180 840 180 720 180C600 180 480 180 360 180C240 180 120 180 60 180H0V120Z" fill="rgba(6, 14, 30, 0.92)"/>
+        </svg>
       </div>
-      <div class="hero-highlight reveal" style="--delay: 0.4s;">
-        <h3>50<span>+</span></h3>
-        <p>Doctor testimonials collected</p>
-        <span>Validating our clinical impact</span>
+      <div class="container hero-focus__grid">
+        <article class="hero-focus-card reveal" style="--delay: 0.12s;">
+          <span class="hero-focus-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18 22l-4.5-4.5a3.2 3.2 0 014.5-4.5l4.5 4.5m7.2 14.4L48 13.2a4 4 0 015.7 5.7L31 41.7m-4.6 4.5L20.6 53a4 4 0 01-5.7-5.7l5.9-5.9" fill="none" stroke="url(#grad-syringe)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+              <defs>
+                <linearGradient id="grad-syringe" x1="8" y1="8" x2="56" y2="56" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#4aa3ff"/>
+                  <stop offset="100%" stop-color="#35d3b4"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </span>
+          <h3>Medical Devices</h3>
+          <p>Our advanced medical devices are meticulously crafted to address unmet clinical needs in critical patient care.</p>
+        </article>
+        <article class="hero-focus-card reveal" style="--delay: 0.24s;">
+          <span class="hero-focus-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 10c6 6 6 14 0 20m24 0c-6-6-6-14 0-20m-20 24c6 6 6 14 0 20m16-20c-6 6-6 14 0 20M12 32h40" fill="none" stroke="url(#grad-dna)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+              <defs>
+                <linearGradient id="grad-dna" x1="12" y1="10" x2="52" y2="54" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#4aa3ff"/>
+                  <stop offset="100%" stop-color="#35d3b4"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </span>
+          <h3>Advanced Diagnostics</h3>
+          <p>We are committed to revolutionising healthcare with early detection solutions that redefine disease monitoring.</p>
+        </article>
+        <article class="hero-focus-card reveal" style="--delay: 0.36s;">
+          <span class="hero-focus-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+              <rect x="20" y="8" width="24" height="48" rx="5" ry="5" fill="none" stroke="url(#grad-platform)" stroke-width="3.2"/>
+              <circle cx="32" cy="48" r="2.8" fill="#4aa3ff"/>
+              <defs>
+                <linearGradient id="grad-platform" x1="20" y1="8" x2="44" y2="56" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#4aa3ff"/>
+                  <stop offset="100%" stop-color="#35d3b4"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </span>
+          <h3>Platform Technology</h3>
+          <p>Unveiling a connected care platform for real-time patient monitoring and seamless data intelligence.</p>
+        </article>
       </div>
-      <div class="hero-highlight reveal" style="--delay: 0.46s;">
-        <h3>6</h3>
-        <p>National supporters</p>
-        <span>AIC-CCMB, BIRAC, DST NIDHI, SISFS, Venture Center, VJTI-TBI</span>
-      </div>
-    </div>
+    </section>
   </header>
 
   <main>
@@ -111,8 +149,8 @@
         </article>
       </div>
     </section>
-    <section class="section container reveal" id="focus">
-      <div class="section-head">
+    <section class="section container reveal focus-showcase" id="focus">
+      <div class="section-head focus-showcase__head">
         <p class="eyebrow">What We Build</p>
         <h2>Precision innovations for intensive and acute care</h2>
         <p>
@@ -120,24 +158,59 @@
           in hospitals. Each vertical targets a critical moment in the care journey.
         </p>
       </div>
-      <div class="card-grid">
-        <article class="card reveal" style="--delay: 0.1s;">
+      <div class="focus-showcase__grid">
+        <article class="focus-card reveal" style="--delay: 0.1s;" tabindex="0">
+          <span class="focus-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="24" cy="24" r="15.5" stroke="currentColor" stroke-width="2.4" opacity="0.5"/>
+              <path d="M24 15v18M15 24h18" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <p class="focus-card__tagline">Human-Centered Hardware</p>
           <h3>Medical Devices</h3>
-          <p>
+          <p class="focus-card__body">
             Advanced medical devices meticulously crafted to address unmet clinical needs in critical patient care.
           </p>
+          <ul class="focus-card__highlights">
+            <li>Closed-loop safety workflows for ICU teams</li>
+            <li>Built for sterile, high-acuity environments</li>
+          </ul>
         </article>
-        <article class="card reveal" style="--delay: 0.18s;">
+        <article class="focus-card reveal" style="--delay: 0.18s;" tabindex="0">
+          <span class="focus-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+              <path d="M34.5 34.5 41 41" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/>
+              <circle cx="22" cy="22" r="9.5" stroke="currentColor" stroke-width="2.8"/>
+              <circle cx="22" cy="22" r="4" fill="currentColor"/>
+            </svg>
+          </span>
+          <p class="focus-card__tagline">Intelligent Sensing</p>
           <h3>Advanced Diagnostics</h3>
-          <p>
+          <p class="focus-card__body">
             Innovative diagnostics that redefine early disease detection with intuitive workflows for clinicians.
           </p>
+          <ul class="focus-card__highlights">
+            <li>Signal processing tuned for early escalation</li>
+            <li>Elegant dashboards for bedside clarity</li>
+          </ul>
         </article>
-        <article class="card reveal" style="--delay: 0.26s;">
+        <article class="focus-card reveal" style="--delay: 0.26s;" tabindex="0">
+          <span class="focus-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+              <rect x="12.5" y="12.5" width="23" height="23" rx="5" stroke="currentColor" stroke-width="2.6"/>
+              <path d="M18 24h12" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>
+              <path d="M24 18v12" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/>
+            </svg>
+          </span>
+          <p class="focus-card__tagline">Connected Platforms</p>
           <h3>Platform Technology</h3>
-          <p>
+          <p class="focus-card__body">
             A connected platform for close patient monitoring and seamless real-time disease identification.
           </p>
+          <ul class="focus-card__highlights">
+            <li>Secure interoperability across care teams</li>
+            <li>Real-time insights for decisive action</li>
+          </ul>
         </article>
       </div>
     </section>
@@ -148,8 +221,8 @@
           <p class="eyebrow trachease-motto">Imagine Initiate Innovate</p>
           <h3>Products</h3>
         </div>
-        <div class="product-duo reveal" style="--delay: 0.2s;">
-          <article class="product-card">
+        <div class="product-duo">
+          <article class="product-card reveal product-card--from-left" style="--delay: 0.16s;">
             <div class="product-card__header">
               <img class="product-card__logo" src="assessts/trachease-logo.png" alt="TrachEase logo">
               <h4>TrachEase</h4>
@@ -200,7 +273,7 @@
               </video>
             </div>
           </article>
-          <article class="product-card product-card--curaspext">
+          <article class="product-card product-card--curaspext reveal product-card--from-right" style="--delay: 0.26s;">
             <div class="product-card__header">
               <br>
               <h4>CuraSpeXt</h4>
@@ -344,11 +417,11 @@
           <span class="contact-divider" aria-hidden="true"></span>
           <article class="contact-location-card">
             <div class="contact-map">
-              <iframe title="Pune Lab Map" src="https://www.google.com/maps?q=Venture+Center,+NCL+Innovation+Park,+Pune&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              <iframe title="Pune Lab Map" src="https://www.google.com/maps?q=100+NCL+Innovation+Park,+Dr.+Homi+Bhabha+Road,+Pune&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
             <div class="contact-location">
               <h5>Pune Lab</h5>
-              <p>Venture Center, NCL Innovation Park, Pune&nbsp;411008, Maharashtra, India</p>
+              <p>ForschMedX Private Limited<br>100 NCL Innovation Park<br>Dr. Homi Bhabha Road<br>Pune&nbsp;411008, Maharashtra, India</p>
             </div>
           </article>
         </div>
