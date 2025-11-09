@@ -13,13 +13,9 @@
   <header class="hero">
     <nav class="nav">
       <div class="nav-inner container">
-        <a class="brand" href="index.html#top">
-          <span class="brand-badge">
-            <img class="brand-logo" src="assessts/medx-logo-2.png" alt="Forsch MedX logo">
-          </span>
-          <span class="brand-wordmark">
-            <span class="brand-line">Forsch<span class="brand-line-accent">MedX</span></span>
-            <span class="brand-tagline">Imagine | Initiate | Innovate</span>
+        <a class="brand" href="index.html#top" aria-label="Forsch MedX home">
+          <span class="brand-chip__logo">
+            <img src="assessts/medx-logo-2.png" alt="Forsch MedX logo">
           </span>
         </a>
         <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
@@ -28,11 +24,11 @@
           <span></span>
         </button>
         <ul class="nav-links">
-          <li><a href="about.html" aria-current="page">About Us</a></li>
+          <li><a href="about.html#about-hero" aria-current="page">About Us</a></li>
           <li><a href="index.html#focus">Focus Areas</a></li>
           <li><a href="index.html#trachease">Products</a></li>
           <li><a href="index.html#support">Contributors</a></li>
-          <li><a href="team.html">Team</a></li>
+          <li><a href="team.html#team">Team</a></li>
           <li><a href="index.html#contact">Contact</a></li>
         </ul>
       </div>
@@ -53,25 +49,21 @@
   </header>
 
   <main class="about-main">
-    <section class="about-banner section reveal">
+    <section class="about-banner section reveal" id="about-hero">
       <div class="container about-banner__inner">
-        <div class="about-banner__visual" aria-hidden="true">
-          <div class="about-illustration">
-            <span class="about-glow"></span>
-            <div class="about-figure"></div>
-          </div>
-        </div>
-        <div class="about-banner__copy">
-          <p class="eyebrow about-banner__eyebrow">Why Forsch MedX</p>
-          <h2>Engineering care that feels human</h2>
-          <p>
-            We blend frontline clinician insight with deep tech craft to turn complex ICU problems into elegant,
-            ready-to-deploy solutions. Every prototype we build starts with patients, ends with measurable impact,
-            and carries our promise of safer, smarter critical care everywhere.
-          </p>
-          <div class="about-banner__actions">
-            <a class="btn primary" href="index.html#focus">Explore our focus areas</a>
-            <a class="btn secondary" href="team.html">Meet the team</a>
+        <div class="about-banner__badge">Why Forsch MedX</div>
+        <div class="about-banner__grid">
+          <div class="about-banner__copy">
+            <h2>Engineering care that feels human</h2>
+            <p>
+              We blend frontline clinician insight with deep tech craft to turn complex ICU problems into elegant,
+              ready-to-deploy solutions. Every prototype we build starts with patients, ends with measurable impact,
+              and carries our promise of safer, smarter critical care everywhere.
+            </p>
+            <div class="about-banner__actions">
+              <a class="btn primary" href="index.html#focus">Explore our focus areas</a>
+              <a class="btn secondary" href="team.html#team">Meet the team</a>
+            </div>
           </div>
         </div>
       </div>
@@ -132,26 +124,37 @@
 
     <section class="about-pillars section reveal">
       <div class="container about-pillars__inner">
-        <article class="pillar-card">
-          <h2>Core Focus Areas</h2>
-          <p>In the realm of unmet medical challenges, ForschMedX specializes in two core focus areas:</p>
-          <ul>
-            <li><strong>Medical Device Development:</strong> Crafting state-of-the-art devices tailored to specific medical needs.</li>
-            <li><strong>Diagnostics Innovation:</strong> Pioneering advanced solutions for accurate and timely disease detection and monitoring.</li>
-          </ul>
-        </article>
-        <article class="pillar-card">
-          <h2>Innovation at the Core</h2>
-          <p>Innovation is ingrained in the DNA of ForschMedX. We cultivate a culture that fosters creativity, exploration, and continuous improvement. Staying at the forefront of technological advancements, our aim is nothing short of revolutionizing the healthcare industry.</p>
-        </article>
-        <article class="pillar-card">
-          <h2>Collaborative Partnerships</h2>
-          <p>Recognizing the power of collaboration, ForschMedX actively seeks partnerships with like-minded organizations, research institutions, and industry leaders. Together, we combine strengths to drive collective progress and shape the future of healthcare.</p>
-        </article>
-        <article class="pillar-card">
-          <h2>Global Impact</h2>
-          <p>Our vision extends beyond borders. ForschMedX is committed to making a positive global impact by delivering solutions that transcend geographical boundaries, ultimately improving healthcare accessibility on a global scale.</p>
-        </article>
+        <header class="about-pillars__header">
+          <p class="eyebrow">What drives us</p>
+          <h2>Four pillars guide every build</h2>
+          <p>Every experiment, partnership, and release is anchored to these principles so clinical impact stays measurable and meaningful.</p>
+        </header>
+        <div class="about-pillars__grid">
+          <article class="pillar-card">
+            <span class="pillar-card__icon" aria-hidden="true">01</span>
+            <h3>Core Focus Areas</h3>
+            <p>In the realm of unmet medical challenges, ForschMedX specializes in two core focus areas:</p>
+            <ul class="pillar-list">
+              <li><strong>Medical Device Development:</strong> Crafting state-of-the-art devices tailored to specific medical needs.</li>
+              <li><strong>Diagnostics Innovation:</strong> Pioneering advanced solutions for accurate and timely disease detection and monitoring.</li>
+            </ul>
+          </article>
+          <article class="pillar-card">
+            <span class="pillar-card__icon" aria-hidden="true">02</span>
+            <h3>Innovation at the Core</h3>
+            <p>Innovation is ingrained in the DNA of ForschMedX. We cultivate a culture that fosters creativity, exploration, and continuous improvement so breakthrough ideas move rapidly toward the ICU floor.</p>
+          </article>
+          <article class="pillar-card">
+            <span class="pillar-card__icon" aria-hidden="true">03</span>
+            <h3>Collaborative Partnerships</h3>
+            <p>We actively seek partnerships with hospitals, research institutions, and industry leaders. Shared roadmaps accelerate validation and keep multi-disciplinary teams aligned on outcomes.</p>
+          </article>
+          <article class="pillar-card">
+            <span class="pillar-card__icon" aria-hidden="true">04</span>
+            <h3>Global Impact</h3>
+            <p>Our vision extends beyond borders. We commit to delivering solutions that transcend geography, bringing safer critical care to emerging markets and tertiary centers alike.</p>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -165,21 +168,32 @@
   </main>
 
   <footer class="footer">
-    <div class="footer-watermark" aria-hidden="true"></div>
     <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="footer-eyebrow">Forsch MedX</span>
+        <p>Imagine. Initiate. Innovate.</p>
+      </div>
       <div class="footer-social">
-        <span>Follow Us</span>
+        <span>Stay Connected</span>
         <div class="footer-social-links">
-          <a href="https://www.linkedin.com/company/forschmedx/" target="_blank" rel="noreferrer" aria-label="LinkedIn">in</a>
-          <a href="https://www.instagram.com/forschmedx/" target="_blank" rel="noreferrer" aria-label="Instagram">ig</a>
+          <a href="https://www.linkedin.com/company/forschmedx/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 9h3v9h-3zM8 7.2a1.8 1.8 0 1 0 0-3.6 1.8 1.8 0 0 0 0 3.6zm3 1.8h3v1.2h.04c.41-.78 1.44-1.6 2.96-1.6 3.16 0 3.75 2.03 3.75 4.66V18h-3v-3.6c0-.86-.02-1.96-1.19-1.96-1.2 0-1.38.93-1.38 1.9V18h-3z" fill="currentColor"/></svg>
+          </a>
+          <a href="https://www.instagram.com/forschmedx/" target="_blank" rel="noreferrer" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3.6" stroke="currentColor" stroke-width="1.5"/><circle cx="17" cy="7" r="1" fill="currentColor"/></svg>
+          </a>
         </div>
       </div>
       <nav class="footer-nav" aria-label="Footer">
         <a href="index.html#trachease">Products</a>
         <a href="index.html#focus">Focus</a>
-        <a href="team.html">Team</a>
-        <a href="index.html#contact">Contact</a>
+        <a href="about.html#about-hero">About</a>
+        <a href="team.html#team">Team</a>
       </nav>
+      <div class="footer-cta">
+        <p>Have a breakthrough in mind?</p>
+        <a class="btn btn-glow" href="mailto:contact@forschmedx.com">Contact Us</a>
+      </div>
       <p class="footer-copy">&copy; <span id="year"></span> Forsch MedX. All rights reserved.</p>
     </div>
   </footer>
@@ -216,6 +230,8 @@
     const navLinks = document.querySelectorAll('.nav-links a');
 
     if (nav && navToggle) {
+      const isDrawer = () => window.matchMedia('(max-width: 1200px)').matches;
+
       const closeNav = () => {
         navToggle.setAttribute('aria-expanded', 'false');
         navToggle.setAttribute('aria-label', 'Open menu');
@@ -224,19 +240,12 @@
       };
 
       const updateNavMode = () => {
-        const useDrawer = window.innerWidth <= 1200;
-        nav.classList.toggle('nav-drawer', useDrawer);
-        navToggle.hidden = !useDrawer;
-        if (!useDrawer) {
+        if (!isDrawer()) {
           closeNav();
         }
       };
 
       navToggle.addEventListener('click', () => {
-        if (!nav.classList.contains('nav-drawer')) {
-          return;
-        }
-
         const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
         navToggle.setAttribute('aria-expanded', String(!isExpanded));
         navToggle.setAttribute('aria-label', isExpanded ? 'Open menu' : 'Close menu');
@@ -246,7 +255,7 @@
 
       navLinks.forEach(link => {
         link.addEventListener('click', () => {
-          if (nav.classList.contains('nav-drawer') && navToggle.getAttribute('aria-expanded') === 'true') {
+          if (isDrawer() && navToggle.getAttribute('aria-expanded') === 'true') {
             closeNav();
           }
         });
@@ -254,7 +263,7 @@
 
       document.addEventListener('click', event => {
         if (
-          nav.classList.contains('nav-drawer') &&
+          isDrawer() &&
           navToggle.getAttribute('aria-expanded') === 'true' &&
           !nav.contains(event.target)
         ) {
@@ -265,7 +274,7 @@
       window.addEventListener('keydown', event => {
         if (
           event.key === 'Escape' &&
-          nav.classList.contains('nav-drawer') &&
+          isDrawer() &&
           navToggle.getAttribute('aria-expanded') === 'true'
         ) {
           closeNav();
@@ -278,4 +287,3 @@
   </script>
 </body>
 </html>
-

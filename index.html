@@ -13,13 +13,9 @@
   <header class="hero">
     <nav class="nav">
       <div class="nav-inner container">
-        <a class="brand" href="#top">
-          <span class="brand-badge">
-            <img class="brand-logo" src="assessts/medx-logo-2.png" alt="Forsch MedX logo">
-          </span>
-          <span class="brand-wordmark">
-            <span class="brand-line">Forsch<span class="brand-line-accent">MedX</span></span>
-            <span class="brand-tagline">Imagine | Initiate | Innovate</span>
+        <a class="brand" href="#top" aria-label="Forsch MedX home">
+          <span class="brand-chip__logo">
+            <img src="assessts/medx-logo-2.png" alt="Forsch MedX logo">
           </span>
         </a>
         <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
@@ -28,11 +24,11 @@
           <span></span>
         </button>
         <ul class="nav-links">
-          <li><a href="about.html">About Us</a></li>
+          <li><a href="about.html#about-hero">About Us</a></li>
           <li><a href="#focus">Focus Areas</a></li>
           <li><a href="#trachease">Products</a></li>
           <li><a href="#support">Contributors</a></li>
-          <li><a href="team.html">Team</a></li>
+          <li><a href="team.html#team">Team</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
@@ -337,37 +333,15 @@
         <div class="supporters-board" role="region" aria-label="Strategic supporters showcase">
           <div class="supporters-column supporters-column--funding" data-support-group="funding">
             <h3>Funding</h3>
-            <div class="supporters-carousel" data-carousel="funding">
-              <div class="supporters-peek supporters-peek--prev" data-role="prev" aria-hidden="true">
-                <img src="" alt="">
-              </div>
-              <article class="supporter-card" tabindex="0" aria-live="polite">
-                <div class="supporter-card__logo">
-                  <img src="" alt="">
-                </div>
-                <p class="supporter-card__name"></p>
-              </article>
-              <div class="supporters-peek supporters-peek--next" data-role="next" aria-hidden="true">
-                <img src="" alt="">
-              </div>
+            <div class="supporters-window" data-marquee="funding" role="region" aria-label="Funding partners">
+              <div class="supporters-track" aria-live="polite"></div>
             </div>
           </div>
           <span class="supporters-divider" aria-hidden="true"></span>
           <div class="supporters-column supporters-column--incubators" data-support-group="incubators">
             <h3>Incubators</h3>
-            <div class="supporters-carousel" data-carousel="incubators">
-              <div class="supporters-peek supporters-peek--prev" data-role="prev" aria-hidden="true">
-                <img src="" alt="">
-              </div>
-              <article class="supporter-card" tabindex="0" aria-live="polite">
-                <div class="supporter-card__logo">
-                  <img src="" alt="">
-                </div>
-                <p class="supporter-card__name"></p>
-              </article>
-              <div class="supporters-peek supporters-peek--next" data-role="next" aria-hidden="true">
-                <img src="" alt="">
-              </div>
+            <div class="supporters-window" data-marquee="incubators" role="region" aria-label="Incubator partners">
+              <div class="supporters-track" aria-live="polite"></div>
             </div>
           </div>
         </div>
@@ -385,9 +359,24 @@
 
     <section class="innovation-band reveal">
       <div class="innovation-inner">
-        <div class="innovation-keyword">Innovate</div>
-        <div class="innovation-quote">
-          <p>"Innovation is the spark that lights the path to progress, turning dreams into reality and reshaping the world with endless possibilities."</p>
+        <div class="innovation-keyword">
+          <span>Imagine</span>
+          <span>Initiate</span>
+          <span>Innovate</span>
+        </div>
+        <div class="innovation-phases">
+          <article class="innovation-phase">
+            <h3>Imagine</h3>
+            <p>"Imagination is the canvas where ‘what if’ becomes ‘what’s next,’ revealing possibilities before they exist."</p>
+          </article>
+          <article class="innovation-phase">
+            <h3>Initiate</h3>
+            <p>"Initiation is the first courageous step that turns intent into momentum and plans into progress."</p>
+          </article>
+          <article class="innovation-phase">
+            <h3>Innovate</h3>
+            <p>"Innovation turns bold ideas into real change, reshaping reality with purpose and possibility."</p>
+          </article>
         </div>
       </div>
     </section>
@@ -422,6 +411,16 @@
             <div class="contact-location">
               <h5>Pune Lab</h5>
               <p>ForschMedX Private Limited<br>100 NCL Innovation Park<br>Dr. Homi Bhabha Road<br>Pune&nbsp;411008, Maharashtra, India</p>
+            </div>
+          </article>
+          <span class="contact-divider" aria-hidden="true"></span>
+          <article class="contact-location-card">
+            <div class="contact-map">
+              <iframe title="VJTI TBI Map" src="https://www.google.com/maps?q=VJTI+TBI,+Matunga,+Mumbai&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="contact-location">
+              <h5>ForschMedX @ VJTI TBI</h5>
+              <p>VJTI Technology Business Incubator<br>VJTI, H R Mahajani Marg, Matunga<br>Mumbai&nbsp;400019, Maharashtra, India</p>
             </div>
           </article>
         </div>
@@ -459,21 +458,32 @@
   </main>
 
   <footer class="footer">
-    <div class="footer-watermark" aria-hidden="true"></div>
     <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="footer-eyebrow">Forsch MedX</span>
+        <p>Imagine. Initiate. Innovate.</p>
+      </div>
       <div class="footer-social">
-        <span>Follow Us</span>
+        <span>Stay Connected</span>
         <div class="footer-social-links">
-          <a href="https://www.linkedin.com/company/forschmedx/" target="_blank" rel="noreferrer" aria-label="LinkedIn">in</a>
-          <a href="https://www.instagram.com/forschmedx/" target="_blank" rel="noreferrer" aria-label="Instagram">ig</a>
+          <a href="https://www.linkedin.com/company/forschmedx/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 9h3v9h-3zM8 7.2a1.8 1.8 0 1 0 0-3.6 1.8 1.8 0 0 0 0 3.6zm3 1.8h3v1.2h.04c.41-.78 1.44-1.6 2.96-1.6 3.16 0 3.75 2.03 3.75 4.66V18h-3v-3.6c0-.86-.02-1.96-1.19-1.96-1.2 0-1.38.93-1.38 1.9V18h-3z" fill="currentColor"/></svg>
+          </a>
+          <a href="https://www.instagram.com/forschmedx/" target="_blank" rel="noreferrer" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3.6" stroke="currentColor" stroke-width="1.5"/><circle cx="17" cy="7" r="1" fill="currentColor"/></svg>
+          </a>
         </div>
       </div>
       <nav class="footer-nav" aria-label="Footer">
         <a href="#trachease">Products</a>
         <a href="#focus">Focus</a>
-        <a href="about.html">About</a>
-        <a href="team.html">Team</a>
+        <a href="about.html#about-hero">About</a>
+        <a href="team.html#team">Team</a>
       </nav>
+      <div class="footer-cta">
+        <p>Have a breakthrough in mind?</p>
+        <a class="btn btn-glow" href="mailto:contact@forschmedx.com">Contact Us</a>
+      </div>
       <p class="footer-copy">&copy; <span id="year"></span> Forsch MedX. All rights reserved.</p>
     </div>
   </footer>
@@ -510,6 +520,8 @@
     const navLinks = document.querySelectorAll('.nav-links a');
 
     if (nav && navToggle) {
+      const isDrawer = () => window.matchMedia('(max-width: 1200px)').matches;
+
       const closeNav = () => {
         navToggle.setAttribute('aria-expanded', 'false');
         navToggle.setAttribute('aria-label', 'Open menu');
@@ -518,19 +530,12 @@
       };
 
       const updateNavMode = () => {
-        const useDrawer = window.innerWidth <= 1200;
-        nav.classList.toggle('nav-drawer', useDrawer);
-        navToggle.hidden = !useDrawer;
-        if (!useDrawer) {
+        if (!isDrawer()) {
           closeNav();
         }
       };
 
       navToggle.addEventListener('click', () => {
-        if (!nav.classList.contains('nav-drawer')) {
-          return;
-        }
-
         const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
         navToggle.setAttribute('aria-expanded', String(!isExpanded));
         navToggle.setAttribute('aria-label', isExpanded ? 'Open menu' : 'Close menu');
@@ -540,7 +545,7 @@
 
       navLinks.forEach(link => {
         link.addEventListener('click', () => {
-          if (nav.classList.contains('nav-drawer') && navToggle.getAttribute('aria-expanded') === 'true') {
+          if (isDrawer() && navToggle.getAttribute('aria-expanded') === 'true') {
             closeNav();
           }
         });
@@ -548,7 +553,7 @@
 
       document.addEventListener('click', event => {
         if (
-          nav.classList.contains('nav-drawer') &&
+          isDrawer() &&
           navToggle.getAttribute('aria-expanded') === 'true' &&
           !nav.contains(event.target)
         ) {
@@ -559,7 +564,7 @@
       window.addEventListener('keydown', event => {
         if (
           event.key === 'Escape' &&
-          nav.classList.contains('nav-drawer') &&
+          isDrawer() &&
           navToggle.getAttribute('aria-expanded') === 'true'
         ) {
           closeNav();
@@ -589,84 +594,58 @@
       ]
     };
 
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const createSupporterCard = supporter => {
+      const card = document.createElement('article');
+      card.className = 'supporter-card';
 
-    document.querySelectorAll('[data-carousel]').forEach(carousel => {
-      const groupKey = carousel.dataset.carousel;
-      const items = supporterGroups[groupKey] || [];
-      if (!items.length) {
-        return;
-      }
+      const logoWrapper = document.createElement('div');
+      logoWrapper.className = 'supporter-card__logo';
 
-      let index = 0;
-      const card = carousel.querySelector('.supporter-card');
-      const cardImg = carousel.querySelector('.supporter-card__logo img');
-      const cardName = carousel.querySelector('.supporter-card__name');
-      const prevImg = carousel.querySelector('[data-role="prev"] img');
-      const nextImg = carousel.querySelector('[data-role="next"] img');
+      const logoImg = document.createElement('img');
+      logoImg.src = supporter.logo;
+      logoImg.alt = `${supporter.name} logo`;
+      logoImg.loading = 'lazy';
+      logoImg.decoding = 'async';
 
-      if (!card || !cardImg || !cardName || !prevImg || !nextImg) {
-        return;
-      }
+      logoWrapper.appendChild(logoImg);
 
-      const updateDisplay = () => {
-        const current = items[index];
-        const prev = items[(index - 1 + items.length) % items.length];
-        const next = items[(index + 1) % items.length];
+      const name = document.createElement('p');
+      name.className = 'supporter-card__name';
+      name.textContent = supporter.name;
 
-        cardImg.src = current.logo;
-        cardImg.alt = `${current.name} logo`;
-        cardImg.loading = 'lazy';
-        cardName.textContent = current.name;
+      card.append(logoWrapper, name);
+      return card;
+    };
 
-        prevImg.src = prev.logo;
-        prevImg.alt = '';
-        prevImg.loading = 'lazy';
-        nextImg.src = next.logo;
-        nextImg.alt = '';
-        nextImg.loading = 'lazy';
-      };
+    const hydrateSupporterMarquees = () => {
+      document.querySelectorAll('[data-marquee]').forEach(container => {
+        const groupKey = container.dataset.marquee;
+        const items = supporterGroups[groupKey] || [];
+        if (!items.length) return;
 
-      updateDisplay();
+        const track = container.querySelector('.supporters-track');
+        if (!track) return;
 
-      if (prefersReducedMotion || items.length < 2) {
-        return;
-      }
+        const sequence = items.length > 1 ? [...items, ...items] : [...items];
 
-      const HOLD_DURATION = 1000;
-      const TRANSITION_DURATION = 520;
-      let holdTimeout;
-      let transitionTimeout;
+        track.innerHTML = '';
+        sequence.forEach(item => track.appendChild(createSupporterCard(item)));
 
-      const clearTimers = () => {
-        window.clearTimeout(holdTimeout);
-        window.clearTimeout(transitionTimeout);
-        card.classList.remove('is-transitioning');
-      };
-
-      const scheduleAdvance = () => {
-        clearTimers();
-        holdTimeout = window.setTimeout(() => {
-          card.classList.add('is-transitioning');
-          transitionTimeout = window.setTimeout(() => {
-            index = (index + 1) % items.length;
-            updateDisplay();
-            card.classList.remove('is-transitioning');
-            scheduleAdvance();
-          }, TRANSITION_DURATION);
-        }, HOLD_DURATION);
-      };
-
-      scheduleAdvance();
-
-      ['mouseenter', 'focusin'].forEach(eventName => {
-        carousel.addEventListener(eventName, clearTimers);
+        if (items.length > 1) {
+          track.classList.remove('is-static');
+          const duration = Math.max(items.length * 3.2, 18);
+          track.style.setProperty('--marquee-duration', `${duration}s`);
+          const cycleHeight = track.scrollHeight / 2;
+          track.style.setProperty('--marquee-distance', `${cycleHeight}px`);
+        } else {
+          track.classList.add('is-static');
+          track.style.removeProperty('--marquee-duration');
+          track.style.removeProperty('--marquee-distance');
+        }
       });
+    };
 
-      ['mouseleave', 'focusout'].forEach(eventName => {
-        carousel.addEventListener(eventName, scheduleAdvance);
-      });
-    });
+    hydrateSupporterMarquees();
   </script>
 </body>
 </html>

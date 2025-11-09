@@ -13,13 +13,9 @@
   <header class="hero">
     <nav class="nav">
       <div class="nav-inner container">
-        <a class="brand" href="index.html#top">
-          <span class="brand-badge">
-            <img class="brand-logo" src="assessts/medx-logo-2.png" alt="Forsch MedX logo">
-          </span>
-          <span class="brand-wordmark">
-            <span class="brand-line">Forsch<span class="brand-line-accent">MedX</span></span>
-            <span class="brand-tagline">Imagine | Initiate | Innovate</span>
+        <a class="brand" href="index.html#top" aria-label="Forsch MedX home">
+          <span class="brand-chip__logo">
+            <img src="assessts/medx-logo-2.png" alt="Forsch MedX logo">
           </span>
         </a>
         <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
@@ -28,11 +24,11 @@
           <span></span>
         </button>
         <ul class="nav-links">
-          <li><a href="about.html">About Us</a></li>
+          <li><a href="about.html#about-hero">About Us</a></li>
           <li><a href="index.html#focus">Focus Areas</a></li>
           <li><a href="index.html#trachease">Products</a></li>
           <li><a href="index.html#support">Contributors</a></li>
-          <li><a href="team.html" aria-current="page">Team</a></li>
+          <li><a href="team.html#team" aria-current="page">Team</a></li>
           <li><a href="index.html#contact">Contact</a></li>
         </ul>
       </div>
@@ -57,43 +53,36 @@
   </header>
 
   <main class="team-main">
-    <section class="team-feature" id="team">
-      <div class="team-feature__namecard">
-        <div class="team-avatar">
+    <section class="team-lead" id="team">
+      <button class="team-card team-card--highlight" type="button"
+        aria-label="Abhishek Gaikar - Founder &amp; CEO"
+        data-name="Abhishek Gaikar"
+        data-role="Founder &amp; CEO"
+        data-bio="Abhishek Gaikar is the founder and CEO of ForschMedX, where he steers product and strategy so every team—from design and engineering to clinical operations—solves the real problems that keep critical care from scaling. His focus: build reliable, privacy-respecting tools that help clinicians work smarter and deliver safer outcomes."
+        data-linkedin="https://www.linkedin.com/in/abhishek-gaikar"
+        data-tags="PRODUCT STRATEGY|CLINICAL PARTNERSHIPS|R&D LEADERSHIP|GO-TO-MARKET"
+        data-photo="assessts/team/Abhishek%20Gaikar-Edit.jpg">
+        <div class="team-card__photo">
           <img src="assessts/team/Abhishek%20Gaikar.jpg" alt="Portrait of Abhishek Gaikar">
         </div>
-        <p class="team-name">Abhishek Gaikar</p>
-        <span class="team-role">Founder &amp; CEO</span>
-      </div>
-      <article class="team-feature__details">
-        <h2>About Abhishek</h2>
-        <p>
-          Abhishek drives the big picture - translating frontline insights into testable med-tech,
-          orchestrating hardware, software, and AI so TrachEase and CuraSpeXt move from idea to validated pilots.
-          He keeps hospital partners, mentors, and grants aligned to an ambitious yet realistic roadmap.
-        </p>
-        <div class="team-tags">
-          <span>Product strategy</span>
-          <span>Clinical partnerships</span>
-          <span>R&amp;D leadership</span>
-          <span>Go-to-market</span>
-        </div>
-      </article>
+        <span class="team-card__name">Abhishek Gaikar</span>
+        <span class="team-card__role">Founder &amp; CEO</span>
+      </button>
     </section>
 
     <section class="team-grid" aria-label="Leadership team">
       <button class="team-card" type="button"
-        aria-label="Akanksha - Microbiology &amp; Clinical Research"
-        data-name="Akanksha"
+        aria-label="Aakanksha Mokal - Microbiology &amp; Clinical Research"
+        data-name="Aakanksha Mokal"
         data-role="Microbiology &amp; Clinical Research"
-        data-bio="Designs lab protocols, matches device outputs with microbiology readouts, and keeps ISO-aligned documentation airtight for studies, grants, and ethics submissions."
-        data-linkedin="https://www.linkedin.com/in/akanksha"
+        data-bio="Part of the TrachEase development team, Aakanksha stress-tests the platform through rigorous experiments—evaluating tubes, vacuum systems, and the suction core—to make sure performance, reliability, and efficacy meet critical-care standards."
+        data-linkedin="https://www.linkedin.com/in/aakanksha-mokal-52467934a"
         data-tags="MICROBIOLOGY PROTOCOLS|CLINICAL RESEARCH|QUALITY SYSTEMS"
-        data-photo="assessts/team/Akanksha.jpg">
+        data-photo="assessts/New%20Team/Aakanksha%20Mokal.jpg">
         <div class="team-card__photo">
-          <img src="assessts/team/Akanksha.jpg" alt="Portrait of Akanksha">
+          <img src="assessts/New%20Team/Aakanksha%20Mokal.jpg" alt="Portrait of Aakanksha Mokal">
         </div>
-        <span class="team-card__name">Akanksha</span>
+        <span class="team-card__name">Aakanksha Mokal</span>
         <span class="team-card__role">Microbiology &amp; Clinical Research</span>
       </button>
       <button class="team-card" type="button"
@@ -114,17 +103,17 @@
 
     <section class="team-inventors" aria-labelledby="inventors-heading">
       <h2 id="inventors-heading">Our Inventors</h2>
-      <div class="team-inventors__grid">
+      <div class="team-inventors__grid team-inventors__grid--primary">
         <button class="team-card team-card--compact" type="button"
           aria-label="Niraj Limbkar - Embedded Systems &amp; Hardware"
           data-name="Niraj Limbkar"
           data-role="Embedded Systems &amp; Hardware"
           data-bio="Owns sensor integration, dependable control loops, and power integrity so clinical data streams stay rock solid."
-          data-linkedin="https://www.linkedin.com/in/niraj-limbkar"
+          data-linkedin="https://www.linkedin.com/in/niraj-limbkar-40659a289/"
           data-tags="EMBEDDED SYSTEMS|SENSOR INTEGRATION|CONTROL LOOPS"
-          data-photo="assessts/team/Niraj%20Limbkar.jpg">
+          data-photo="assessts/New%20Team/Niraj%20Limbkar-2.jpg">
           <div class="team-card__photo">
-            <img src="assessts/team/Niraj%20Limbkar.jpg" alt="Portrait of Niraj Limbkar">
+            <img src="assessts/New%20Team/Niraj%20Limbkar-2.jpg" alt="Portrait of Niraj Limbkar">
           </div>
           <span class="team-card__name">Niraj Limbkar</span>
           <span class="team-card__role">Embedded Systems &amp; Hardware</span>
@@ -133,12 +122,12 @@
           aria-label="Hitesh Gamare - Design &amp; Rapid Prototyping"
           data-name="Hitesh Gamare"
           data-role="Design &amp; Rapid Prototyping"
-          data-bio="Converts sketches into manufacturable parts - optimising CAD, printing fixtures, and de-risking mechanics fast."
+          data-bio="I turn clinical problems into clear product designs—building clean CAD and 3D visualizations, prototyping fast with prints, machining, and jigs, and iterating with usability and manufacturability data so hardware stays reliable and ready to scale."
           data-linkedin="https://www.linkedin.com/in/hitesh-gamare"
-          data-tags="INDUSTRIAL DESIGN|RAPID PROTOTYPING|MANUFACTURING"
-          data-photo="assessts/team/Hitesh%20Gamare.jpg">
+          data-tags="PRODUCT DESIGNER|3D VISUALIZER|RAPID PROTOTYPING"
+          data-photo="assessts/New%20Team/Hitesh%20Gamare-2.jpg">
           <div class="team-card__photo">
-            <img src="assessts/team/Hitesh%20Gamare.jpg" alt="Portrait of Hitesh Gamare">
+            <img src="assessts/New%20Team/Hitesh%20Gamare-2.jpg" alt="Portrait of Hitesh Gamare">
           </div>
           <span class="team-card__name">Hitesh Gamare</span>
           <span class="team-card__role">Design &amp; Rapid Prototyping</span>
@@ -158,27 +147,124 @@
           <span class="team-card__role">Software &amp; Cloud Integrations</span>
         </button>
       </div>
+      <div class="team-inventors__grid team-inventors__grid--secondary">
+        <button class="team-card team-card--compact" type="button"
+          aria-label="D Vishal Gunjal - Product Systems"
+          data-name="D Vishal Gunjal"
+          data-role="Product Systems"
+          data-bio="Designed and developed the UI/UX for TrachEase, keeping the workflow intuitive for clinicians while translating requirements into build-ready interfaces."
+          data-linkedin="https://www.linkedin.com/in/d-vishal-gunjal-724577249/"
+          data-tags="UI/UX DESIGN|PRODUCT SYSTEMS|HUMAN-CENTRED ENGINEERING"
+          data-photo="">
+          <div class="team-card__photo team-card__photo--initials">
+            <span class="team-card__initials" aria-hidden="true">VG</span>
+          </div>
+          <span class="team-card__name">D Vishal Gunjal</span>
+          <span class="team-card__role">Product Systems</span>
+        </button>
+        <button class="team-card team-card--compact" type="button"
+          aria-label="Rohan Deshmukh - Firmware &amp; Test Automation"
+          data-name="Rohan Deshmukh"
+          data-role="Firmware &amp; Test Automation"
+          data-bio="Automates regression benches, writes resilient firmware, and ensures every iteration meets reliability requirements before pilots."
+          data-linkedin="https://www.linkedin.com/in/rohan-deshmukh"
+          data-tags="FIRMWARE|TEST AUTOMATION|HARDWARE QA"
+          data-photo="">
+          <div class="team-card__photo team-card__photo--initials">
+            <span class="team-card__initials" aria-hidden="true">RD</span>
+          </div>
+          <span class="team-card__name">Rohan Deshmukh</span>
+          <span class="team-card__role">Firmware &amp; Test Automation</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="team-advisors section" aria-labelledby="advisors-heading">
+      <div class="team-advisors__inner">
+        <p class="eyebrow">Advisory Council</p>
+        <h2 id="advisors-heading">Guidance that keeps us grounded</h2>
+        <p>Our advisors pair decades of clinical, engineering, and market experience with the courage to challenge assumptions. They ensure every build aligns with standards, evidence, and scale.</p>
+        <div class="team-advisors__grid">
+          <button class="team-card team-card--advisor" type="button"
+            aria-label="Dr. Madhav Sathe - Clinical Advisor (Anesthesiology &amp; ICU)"
+            data-name="Dr. Madhav Sathe"
+            data-role="Clinical Advisor (Anesthesiology &amp; ICU)"
+            data-bio="Senior anesthesiologist active across peri-operative and critical-care pathways. Advises on airway safety, suctioning protocols, and clinician workflows for TrachEase while supporting ethics oversight, risk management, and clinical validation planning."
+            data-tags="ANESTHESIOLOGY|ICU|CLINICAL VALIDATION|PATIENT SAFETY"
+            data-photo="assessts/Advisors/dr-madhav-sathe.png">
+            <div class="team-card__photo">
+              <img src="assessts/Advisors/dr-madhav-sathe.png" alt="Portrait of Dr. Madhav Sathe">
+            </div>
+            <span class="team-card__name">Dr. Madhav Sathe</span>
+            <span class="team-card__role">Clinical advisor guiding safe airway workflows and ICU adoption for TrachEase.</span>
+          </button>
+          <button class="team-card team-card--advisor" type="button"
+            aria-label="Aman Midha - Innovation &amp; Industrial Design Advisor"
+            data-name="Aman Midha"
+            data-role="Innovation &amp; Industrial Design Advisor"
+            data-bio="Product innovator and ID expert who specializes in human-factors, design for manufacture, and usability. Guides enclosure and fixture design, serviceability, and ISO 13485 design-history documentation while driving rapid prototyping and formative usability tests."
+            data-tags="INDUSTRIAL DESIGN|HFE/USABILITY|DFM|RAPID PROTOTYPING"
+            data-photo="assessts/Advisors/aman-midha.jpg">
+            <div class="team-card__photo">
+              <img src="assessts/Advisors/aman-midha.jpg" alt="Portrait of Aman Midha">
+            </div>
+            <span class="team-card__name">Aman Midha</span>
+            <span class="team-card__role">Industrial design advisor shaping safe, intuitive hardware for ICU use.</span>
+          </button>
+          <button class="team-card team-card--advisor" type="button"
+            aria-label="Hemant Punekar - CFD &amp; Simulation Advisor"
+            data-name="Hemant Punekar"
+            data-role="CFD &amp; Simulation Advisor"
+            data-bio="CFD specialist with deep Ansys experience for medical and fluid systems. Leads digital-twin studies for secretion transport, suction flow paths, and pressure losses to optimize Venturi geometry and correlate simulation outputs with bench testing."
+            data-tags="CFD/ANSYS|DIGITAL TWIN|VENTURI OPTIMIZATION|VALIDATION"
+            data-photo="assessts/Advisors/hemant-punekar.jpg">
+            <div class="team-card__photo">
+              <img src="assessts/Advisors/hemant-punekar.jpg" alt="Portrait of Hemant Punekar">
+            </div>
+            <span class="team-card__name">Hemant Punekar</span>
+            <span class="team-card__role">CFD advisor optimizing TrachEase flow dynamics through high-fidelity simulation.</span>
+          </button>
+        </div>
+        <div class="team-advisors__mapping">
+          <h3>How They Map to TrachEase</h3>
+          <ul>
+            <li><strong>Clinical (Sathe):</strong> Intended Use &amp; Indications &bull; Risk controls &bull; Suction protocol review &bull; Clinical study design &bull; KOL outreach</li>
+            <li><strong>Design (Midha):</strong> ID/HFE &bull; Enclosure + cable routing &bull; Sterilization-friendly materials &bull; DFM/assembly jigs &bull; Packaging/IFU visuals</li>
+            <li><strong>CFD (Punekar):</strong> Flow regime selection &bull; Delta P vs. flow curves &bull; Partition/ETT geometry trade-offs &bull; Bench-to-sim correlation &bull; Tolerance studies</li>
+          </ul>
+        </div>
+      </div>
     </section>
   
 </main>
 
   <footer class="footer">
-    <div class="footer-watermark" aria-hidden="true"></div>
     <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="footer-eyebrow">Forsch MedX</span>
+        <p>Imagine. Initiate. Innovate.</p>
+      </div>
       <div class="footer-social">
-        <span>Follow Us</span>
+        <span>Stay Connected</span>
         <div class="footer-social-links">
-          <a href="https://www.linkedin.com/company/forschmedx/" target="_blank" rel="noreferrer" aria-label="LinkedIn">in</a>
-          <a href="https://www.instagram.com/forschmedx/" target="_blank" rel="noreferrer" aria-label="Instagram">ig</a>
+          <a href="https://www.linkedin.com/company/forschmedx/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 9h3v9h-3zM8 7.2a1.8 1.8 0 1 0 0-3.6 1.8 1.8 0 0 0 0 3.6zm3 1.8h3v1.2h.04c.41-.78 1.44-1.6 2.96-1.6 3.16 0 3.75 2.03 3.75 4.66V18h-3v-3.6c0-.86-.02-1.96-1.19-1.96-1.2 0-1.38.93-1.38 1.9V18h-3z" fill="currentColor"/></svg>
+          </a>
+          <a href="https://www.instagram.com/forschmedx/" target="_blank" rel="noreferrer" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3.6" stroke="currentColor" stroke-width="1.5"/><circle cx="17" cy="7" r="1" fill="currentColor"/></svg>
+          </a>
         </div>
       </div>
       <nav class="footer-nav" aria-label="Footer">
         <a href="index.html#trachease">Products</a>
         <a href="index.html#focus">Focus</a>
-        <a href="about.html">About</a>
-        <a href="#team">Team</a>
-        <a href="index.html#contact">Contact</a>
+        <a href="about.html#about-hero">About</a>
+        <a href="team.html#team">Team</a>
       </nav>
+      <div class="footer-cta">
+        <p>Have a breakthrough in mind?</p>
+        <a class="btn btn-glow" href="mailto:contact@forschmedx.com">Contact Us</a>
+      </div>
       <p class="footer-copy">&copy; <span id="year"></span> Forsch MedX. All rights reserved.</p>
     </div>
   </footer>
@@ -192,6 +278,8 @@
     const navLinks = document.querySelectorAll('.nav-links a');
 
     if (nav && navToggle) {
+      const isDrawer = () => window.matchMedia('(max-width: 1200px)').matches;
+
       const closeNav = () => {
         navToggle.setAttribute('aria-expanded', 'false');
         navToggle.setAttribute('aria-label', 'Open menu');
@@ -200,19 +288,12 @@
       };
 
       const updateNavMode = () => {
-        const useDrawer = window.innerWidth <= 1200;
-        nav.classList.toggle('nav-drawer', useDrawer);
-        navToggle.hidden = !useDrawer;
-        if (!useDrawer) {
+        if (!isDrawer()) {
           closeNav();
         }
       };
 
       navToggle.addEventListener('click', () => {
-        if (!nav.classList.contains('nav-drawer')) {
-          return;
-        }
-
         const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
         navToggle.setAttribute('aria-expanded', String(!isExpanded));
         navToggle.setAttribute('aria-label', isExpanded ? 'Open menu' : 'Close menu');
@@ -222,7 +303,7 @@
 
       navLinks.forEach(link => {
         link.addEventListener('click', () => {
-          if (nav.classList.contains('nav-drawer') && navToggle.getAttribute('aria-expanded') === 'true') {
+          if (isDrawer() && navToggle.getAttribute('aria-expanded') === 'true') {
             closeNav();
           }
         });
@@ -230,7 +311,7 @@
 
       document.addEventListener('click', event => {
         if (
-          nav.classList.contains('nav-drawer') &&
+          isDrawer() &&
           navToggle.getAttribute('aria-expanded') === 'true' &&
           !nav.contains(event.target)
         ) {
@@ -241,7 +322,7 @@
       window.addEventListener('keydown', event => {
         if (
           event.key === 'Escape' &&
-          nav.classList.contains('nav-drawer') &&
+          isDrawer() &&
           navToggle.getAttribute('aria-expanded') === 'true'
         ) {
           closeNav();
@@ -257,6 +338,7 @@
     overlay.className = 'team-panel-overlay';
     overlay.innerHTML = `
       <div class="team-panel" role="dialog" aria-modal="true" aria-labelledby="team-panel-name" tabindex="-1">
+        <button class="team-panel__close" type="button" aria-label="Close dialog">✕</button>
         <div class="team-panel__photo">
           <img src="" alt="" class="team-panel__img" hidden>
           <span class="team-panel__initials" hidden></span>
@@ -264,9 +346,9 @@
             <p class="team-panel__nameplate-name"></p>
             <p class="team-panel__nameplate-role"></p>
           </div>
-          <button class="team-panel__linkedin-btn" type="button" aria-label="View LinkedIn profile">
+          <a class="team-panel__linkedin-btn" href="#" target="_blank" rel="noreferrer" aria-label="View LinkedIn profile">
             <span aria-hidden="true">in</span>
-          </button>
+          </a>
         </div>
         <div class="team-panel__body">
           <p class="team-panel__eyebrow">About Them</p>
@@ -289,7 +371,15 @@
     const linkedBtn = overlay.querySelector('.team-panel__linkedin-btn');
     const nameplateName = overlay.querySelector('.team-panel__nameplate-name');
     const nameplateRole = overlay.querySelector('.team-panel__nameplate-role');
+    const closeBtn = overlay.querySelector('.team-panel__close');
     let activeTrigger = null;
+
+    const normalizeLinkedInUrl = url => {
+      if (!url) return '';
+      const trimmed = url.trim();
+      if (!trimmed) return '';
+      return /^https?:\/\//i.test(trimmed) ? trimmed : `https://${trimmed.replace(/^\/+/, '')}`;
+    };
 
     const openPanel = card => {
       const { name = '', role = '', bio = '', linkedin = '', photo = '', tags = '' } = card.dataset;
@@ -306,7 +396,7 @@
         initialsEl.hidden = true;
       } else {
         imgEl.hidden = true;
-        const initials = (name || '').split(' ').map(p => p[0] || '').join('').slice(0, 2).toUpperCase();
+        const initials = (name || '').split(' ').map(part => part[0] || '').join('').slice(0, 2).toUpperCase();
         initialsEl.textContent = initials || 'FM';
         initialsEl.hidden = false;
       }
@@ -326,12 +416,14 @@
         tagsEl.hidden = true;
       }
 
-      linkedBtn.onclick = () => {
-        if (linkedin) {
-          window.open(linkedin, '_blank', 'noreferrer');
-        }
-      };
-      linkedBtn.hidden = !linkedin;
+      const linkedinUrl = normalizeLinkedInUrl(linkedin);
+      if (linkedinUrl) {
+        linkedBtn.href = linkedinUrl;
+        linkedBtn.hidden = false;
+      } else {
+        linkedBtn.removeAttribute('href');
+        linkedBtn.hidden = true;
+      }
 
       overlay.classList.add('is-visible');
       document.body.classList.add('team-panel-open');
@@ -347,27 +439,30 @@
       }
     };
 
-    document.addEventListener('click', event => {
-      const card = event.target.closest('.team-card');
-      if (!card) {
-        if (overlay.classList.contains('is-visible') && !panel.contains(event.target)) {
-          closePanel();
-        }
-        return;
-      }
+    const handleCardTrigger = card => {
+      if (!card) return;
       activeTrigger = card;
       openPanel(card);
+    };
+
+    document.addEventListener('click', event => {
+      const card = event.target.closest('.team-card');
+      if (card) {
+        handleCardTrigger(card);
+        return;
+      }
+
+      if (overlay.classList.contains('is-visible') && !panel.contains(event.target)) {
+        closePanel();
+      }
     });
 
     document.addEventListener('keydown', event => {
-      if (event.key === 'Enter' || event.key === ' ') {
-        const card = event.target.closest('.team-card');
-        if (card) {
-          event.preventDefault();
-          activeTrigger = card;
-          openPanel(card);
-        }
+      if ((event.key === 'Enter' || event.key === ' ') && event.target.closest('.team-card')) {
+        event.preventDefault();
+        handleCardTrigger(event.target.closest('.team-card'));
       }
+
       if (event.key === 'Escape' && overlay.classList.contains('is-visible')) {
         closePanel();
       }
@@ -379,13 +474,10 @@
       }
     });
 
+    if (closeBtn) {
+      closeBtn.addEventListener('click', closePanel);
+    }
+
   </script>
 </body>
 </html>
-
-
-
-
-
-
-
