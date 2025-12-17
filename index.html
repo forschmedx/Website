@@ -7,6 +7,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@500;600;700&display=swap" rel="stylesheet">
+  <script>
+    (() => {
+      const stored = localStorage.getItem('fm-theme');
+      const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+      const theme = stored === 'light' || stored === 'dark' ? stored : (prefersLight ? 'light' : 'dark');
+      document.documentElement.dataset.theme = theme;
+    })();
+  </script>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -31,6 +39,20 @@
           <li><a href="team.html#team">Team</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to light mode" aria-pressed="false">
+          <span class="theme-toggle__icon theme-toggle__icon--moon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M21 12.35A8.5 8.5 0 0 1 11.65 3 8.5 8.5 0 1 0 21 12.35Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span class="theme-toggle__icon theme-toggle__icon--sun" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="4.6" stroke="currentColor" stroke-width="1.6"/>
+              <path d="M12 2v2.4m0 15.2V22M4.4 12H2m20 0h-2.4M6.2 6.2 4.6 4.6m14.8 14.8-1.6-1.6m0-12.4 1.6-1.6M4.6 19.4l1.6-1.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <span class="theme-toggle__label">Dark</span>
+        </button>
       </div>
     </nav>
 
@@ -269,6 +291,7 @@
               </video>
             </div>
           </article>
+          <!-- CuraSpeXt temporarily hidden
           <article class="product-card product-card--curaspext reveal product-card--from-right" style="--delay: 0.26s;">
             <div class="product-card__header">
               <br><br>
@@ -320,6 +343,7 @@
               </video>
             </div>
           </article>
+          -->
         </div>
         <div class="product-cta-row reveal" style="--delay: 0.36s;">
           <a class="btn secondary trachease-contact" href="#contact">Connect with us for more details</a>
@@ -483,9 +507,68 @@
     document.getElementById('year').textContent = new Date().getFullYear();
     document.documentElement.classList.add('js');
 
+    const prefersReducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const shouldReduceMotion = prefersReducedMotionQuery.matches;
+
+    const themeToggle = document.querySelector('[data-theme-toggle]');
+    const themeToggleLabel = themeToggle?.querySelector('.theme-toggle__label');
+    const storedTheme = localStorage.getItem('fm-theme');
+    let hasStoredTheme = storedTheme === 'light' || storedTheme === 'dark';
+    const prefersLightScheme = window.matchMedia('(prefers-color-scheme: light)');
+
+    const resolveTheme = () => {
+      if (hasStoredTheme) return storedTheme;
+      return prefersLightScheme.matches ? 'light' : 'dark';
+    };
+
+    const syncThemeUI = theme => {
+      if (!themeToggle) return;
+      const isLight = theme === 'light';
+      themeToggle.setAttribute('aria-pressed', isLight ? 'true' : 'false');
+      themeToggle.setAttribute('aria-label', isLight ? 'Switch to dark mode' : 'Switch to light mode');
+      if (themeToggleLabel) {
+        themeToggleLabel.textContent = isLight ? 'Light' : 'Dark';
+      }
+    };
+
+    const setTheme = theme => {
+      const next = theme === 'light' ? 'light' : 'dark';
+      document.documentElement.dataset.theme = next;
+      localStorage.setItem('fm-theme', next);
+      hasStoredTheme = true;
+      syncThemeUI(next);
+    };
+
+    const initialTheme = resolveTheme();
+    document.documentElement.dataset.theme = initialTheme;
+    syncThemeUI(initialTheme);
+
+    if (themeToggle) {
+      themeToggle.addEventListener('click', () => {
+        const current = document.documentElement.dataset.theme === 'light' ? 'light' : 'dark';
+        setTheme(current === 'light' ? 'dark' : 'light');
+      });
+    }
+
+    if (!hasStoredTheme && prefersLightScheme) {
+      const handlePreferenceChange = event => setTheme(event.matches ? 'light' : 'dark');
+      if (typeof prefersLightScheme.addEventListener === 'function') {
+        prefersLightScheme.addEventListener('change', handlePreferenceChange);
+      } else if (typeof prefersLightScheme.addListener === 'function') {
+        prefersLightScheme.addListener(handlePreferenceChange);
+      }
+    }
+
+    document.querySelectorAll('img').forEach(img => {
+      if (!img.closest('.nav')) {
+        img.loading = img.loading || 'lazy';
+      }
+      img.decoding = img.decoding || 'async';
+    });
+
     const revealElements = document.querySelectorAll('.reveal');
 
-    if ('IntersectionObserver' in window) {
+    if ('IntersectionObserver' in window && !shouldReduceMotion) {
       const revealObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
@@ -653,6 +736,13 @@
       ]
     };
 
+    const bindMarqueeHover = container => {
+      if (container.dataset.marqueeBound) return;
+      container.addEventListener('mouseenter', () => container.classList.add('is-paused'));
+      container.addEventListener('mouseleave', () => container.classList.remove('is-paused'));
+      container.dataset.marqueeBound = 'true';
+    };
+
     const createSupporterCard = supporter => {
       const card = document.createElement('article');
       card.className = 'supporter-card';
@@ -685,6 +775,8 @@
         const track = container.querySelector('.supporters-track');
         if (!track) return;
 
+        bindMarqueeHover(container);
+
         const sequence = items.length > 1 ? [...items, ...items] : [...items];
 
         track.innerHTML = '';
@@ -692,10 +784,27 @@
 
         if (items.length > 1) {
           track.classList.remove('is-static');
-          const duration = Math.max(items.length * 3.2, 18);
-          track.style.setProperty('--marquee-duration', `${duration}s`);
-          const cycleHeight = track.scrollHeight / 2;
-          track.style.setProperty('--marquee-distance', `${cycleHeight}px`);
+          const pxPerSecond = 100;
+          const applyAnimation = () => {
+            const styles = window.getComputedStyle(track);
+            const gap = Number.parseFloat(styles.rowGap) || Number.parseFloat(styles.gap) || 0;
+            const distance = (track.scrollHeight + gap) / 2;
+            if (!distance) return;
+            const duration = Math.max(distance / pxPerSecond, 18);
+            track.style.setProperty('--marquee-distance', `${distance}px`);
+            track.style.setProperty('--marquee-duration', `${duration}s`);
+            track.style.setProperty('animation', 'none');
+            void track.offsetHeight;
+            track.style.removeProperty('animation');
+          };
+
+          applyAnimation();
+          requestAnimationFrame(applyAnimation);
+
+          track.querySelectorAll('img').forEach(img => {
+            if (img.complete) return;
+            img.addEventListener('load', applyAnimation, { once: true });
+          });
         } else {
           track.classList.add('is-static');
           track.style.removeProperty('--marquee-duration');
@@ -703,6 +812,12 @@
         }
       });
     };
+
+    let marqueeResizeTimer;
+    window.addEventListener('resize', () => {
+      clearTimeout(marqueeResizeTimer);
+      marqueeResizeTimer = setTimeout(hydrateSupporterMarquees, 200);
+    });
 
     hydrateSupporterMarquees();
   </script>
