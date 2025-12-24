@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -19,7 +19,7 @@
 </head>
 <body class="about-page">
   <header class="hero">
-    <nav class="nav">
+        <nav class="nav">
       <div class="nav-inner container">
         <a class="brand" href="index.html#top" aria-label="ForschMedX home">
           <span class="brand-chip__logo">
@@ -32,10 +32,23 @@
           <span></span>
         </button>
         <ul class="nav-links">
-          <li><a href="about.html#about-hero" aria-current="page">About Us</a></li>
-          <li><a href="index.html#focus">Focus Areas</a></li>
-          <li><a href="index.html#trachease">Products</a></li>
-          <li><a href="index.html#support">Contributors</a></li>
+          <li class="nav-dropdown">
+            <button class="nav-dropdown__trigger" type="button" data-dropdown-toggle aria-expanded="false" aria-controls="nav-dropdown-home" aria-haspopup="true">Home</button>
+            <div class="nav-dropdown__panel" id="nav-dropdown-home" aria-label="Home">
+              <a href="index.html#focus">Focus Areas</a>
+              <a href="index.html#trachease">Products</a>
+              <a href="index.html#support">Contributors</a>
+            </div>
+          </li>
+          <li><a href="index.html#awards">Awards</a></li>
+          <li class="nav-dropdown">
+            <button class="nav-dropdown__trigger" type="button" data-dropdown-toggle aria-expanded="false" aria-controls="nav-dropdown-about" aria-haspopup="true" aria-current="page">About Us</button>
+            <div class="nav-dropdown__panel" id="nav-dropdown-about" aria-label="About Us">
+              <a href="#about-hero">Why</a>
+              <a href="#about-who">Who</a>
+              <a href="#about-what">What</a>
+            </div>
+          </li>
           <li><a href="team.html#team">Team</a></li>
           <li><a href="index.html#contact">Contact</a></li>
         </ul>
@@ -54,7 +67,7 @@
           <span class="theme-toggle__label">Dark</span>
         </button>
       </div>
-    </nav>
+      </nav>
 
     <div class="hero-background" aria-hidden="true">
       <video class="hero-video" src="assessts/Video.mp4" autoplay muted loop playsinline preload="metadata"></video>
@@ -91,7 +104,7 @@
       </div>
     </section>
 
-    <section class="about-intro section reveal">
+    <section class="about-intro section reveal" id="about-who">
       <div class="container about-intro__grid">
         <div class="about-intro__lead">
           <p class="eyebrow">Who We Are</p>
@@ -110,7 +123,7 @@
         <div class="about-panels">
           <article class="about-panel">
             <header>
-              <span class="about-panel__icon" aria-hidden="true">🌐</span>
+              <span class="about-panel__icon" aria-hidden="true">&#127760;</span>
               <p class="about-panel__eyebrow">About us</p>
             </header>
             <p>
@@ -121,7 +134,7 @@
           </article>
           <article class="about-panel">
             <header>
-              <span class="about-panel__icon" aria-hidden="true">🎯</span>
+              <span class="about-panel__icon" aria-hidden="true">&#127919;</span>
               <p class="about-panel__eyebrow">Mission</p>
             </header>
             <p>
@@ -132,7 +145,7 @@
           </article>
           <article class="about-panel">
             <header>
-              <span class="about-panel__icon" aria-hidden="true">🧠</span>
+              <span class="about-panel__icon" aria-hidden="true">&#129504;</span>
               <p class="about-panel__eyebrow">Expertise</p>
             </header>
             <p>
@@ -144,7 +157,7 @@
       </div>
     </section>
 
-    <section class="about-pillars section reveal">
+    <section class="about-pillars section reveal" id="about-what">
       <div class="container about-pillars__inner">
         <header class="about-pillars__header">
           <p class="eyebrow">What drives us</p>
@@ -201,7 +214,7 @@
           <a href="https://www.linkedin.com/company/forschmedx/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 9h3v9h-3zM8 7.2a1.8 1.8 0 1 0 0-3.6 1.8 1.8 0 0 0 0 3.6zm3 1.8h3v1.2h.04c.41-.78 1.44-1.6 2.96-1.6 3.16 0 3.75 2.03 3.75 4.66V18h-3v-3.6c0-.86-.02-1.96-1.19-1.96-1.2 0-1.38.93-1.38 1.9V18h-3z" fill="currentColor"/></svg>
           </a>
-          <a href="https://www.instagram.com/forschmed_x?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noreferrer" aria-label="Instagram">
+          <a href="https://www.instagram.com/forschmed_x/#" target="_blank" rel="noreferrer" aria-label="Instagram">
             <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3.6" stroke="currentColor" stroke-width="1.5"/><circle cx="17" cy="7" r="1" fill="currentColor"/></svg>
           </a>
         </div>
@@ -306,65 +319,92 @@
       revealElements.forEach(element => element.classList.add('reveal-visible'));
     }
 
-    const nav = document.querySelector('.nav');
-    const navToggle = document.querySelector('.nav-toggle');
-    const navLinks = document.querySelectorAll('.nav-links a');
+        const nav = document.querySelector(".nav");
+        const navToggle = document.querySelector(".nav-toggle");
+        const navLinks = document.querySelectorAll(".nav-links a, .nav-dropdown__panel a");
+        const dropdownToggles = document.querySelectorAll("[data-dropdown-toggle]");
 
-    if (nav && navToggle) {
-      const isDrawer = () => window.matchMedia('(max-width: 1200px)').matches;
+        if (nav && navToggle) {
+          const isDrawer = () => window.matchMedia('(max-width: 1200px)').matches;
 
-      const closeNav = () => {
-        navToggle.setAttribute('aria-expanded', 'false');
-        navToggle.setAttribute('aria-label', 'Open menu');
-        nav.classList.remove('nav-open');
-        document.body.classList.remove('nav-open');
-      };
+          const closeDropdowns = () => {
+            document.querySelectorAll('.nav-dropdown.nav-dropdown-open').forEach(dropdown => {
+              dropdown.classList.remove('nav-dropdown-open');
+            });
+            dropdownToggles.forEach(toggle => {
+              toggle.setAttribute('aria-expanded', 'false');
+            });
+          };
 
-      const updateNavMode = () => {
-        if (!isDrawer()) {
-          closeNav();
+          const closeNav = () => {
+            navToggle.setAttribute('aria-expanded', 'false');
+            navToggle.setAttribute('aria-label', 'Open menu');
+            nav.classList.remove('nav-open');
+            document.body.classList.remove('nav-open');
+            closeDropdowns();
+          };
+
+          const updateNavMode = () => {
+            if (!isDrawer()) {
+              closeNav();
+            }
+          };
+
+          navToggle.addEventListener('click', () => {
+            const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+            navToggle.setAttribute('aria-expanded', String(!isExpanded));
+            navToggle.setAttribute('aria-label', isExpanded ? 'Open menu' : 'Close menu');
+            nav.classList.toggle('nav-open', !isExpanded);
+            document.body.classList.toggle('nav-open', !isExpanded);
+            if (isExpanded) {
+              closeDropdowns();
+            }
+          });
+
+          dropdownToggles.forEach(toggle => {
+            toggle.addEventListener('click', () => {
+              const dropdown = toggle.closest('.nav-dropdown');
+              if (!dropdown) return;
+              const willOpen = !dropdown.classList.contains('nav-dropdown-open');
+              closeDropdowns();
+              dropdown.classList.toggle('nav-dropdown-open', willOpen);
+              toggle.setAttribute('aria-expanded', String(willOpen));
+            });
+          });
+
+          navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+              closeDropdowns();
+              if (isDrawer() && navToggle.getAttribute('aria-expanded') === 'true') {
+                closeNav();
+              }
+            });
+          });
+
+          document.addEventListener('click', event => {
+            if (!nav.contains(event.target)) {
+              closeDropdowns();
+            }
+            if (isDrawer() && navToggle.getAttribute('aria-expanded') === 'true' && !nav.contains(event.target)) {
+              closeNav();
+            }
+          });
+
+          window.addEventListener('keydown', event => {
+            if (event.key === 'Escape') {
+              closeDropdowns();
+              if (isDrawer() && navToggle.getAttribute('aria-expanded') === 'true') {
+                closeNav();
+              }
+            }
+          });
+
+          window.addEventListener('resize', updateNavMode);
+          updateNavMode();
         }
-      };
-
-      navToggle.addEventListener('click', () => {
-        const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
-        navToggle.setAttribute('aria-expanded', String(!isExpanded));
-        navToggle.setAttribute('aria-label', isExpanded ? 'Open menu' : 'Close menu');
-        nav.classList.toggle('nav-open', !isExpanded);
-        document.body.classList.toggle('nav-open', !isExpanded);
-      });
-
-      navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-          if (isDrawer() && navToggle.getAttribute('aria-expanded') === 'true') {
-            closeNav();
-          }
-        });
-      });
-
-      document.addEventListener('click', event => {
-        if (
-          isDrawer() &&
-          navToggle.getAttribute('aria-expanded') === 'true' &&
-          !nav.contains(event.target)
-        ) {
-          closeNav();
-        }
-      });
-
-      window.addEventListener('keydown', event => {
-        if (
-          event.key === 'Escape' &&
-          isDrawer() &&
-          navToggle.getAttribute('aria-expanded') === 'true'
-        ) {
-          closeNav();
-        }
-      });
-
-      window.addEventListener('resize', updateNavMode);
-      updateNavMode();
-    }
-  </script>
+</script>
 </body>
 </html>
+
+
+
