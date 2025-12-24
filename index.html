@@ -15,7 +15,7 @@
       document.documentElement.dataset.theme = theme;
     })();
   </script>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
   <header class="hero">
@@ -34,7 +34,7 @@
                 <ul class="nav-links">
                   <li class="nav-dropdown">
                     <button class="nav-dropdown__trigger" type="button" data-dropdown-toggle aria-expanded="false" aria-controls="nav-dropdown-home" aria-haspopup="true">Home</button>
-                    <div class="nav-dropdown__panel" id="nav-dropdown-home" aria-label="Home">
+                    <div class="nav-dropdown__panel" id="nav-dropdown-home" aria-label="Home" hidden>
                       <a href="#focus">Focus Areas</a>
                       <a href="#trachease">Products</a>
                       <a href="#support">Contributors</a>
@@ -43,7 +43,7 @@
                   <li><a href="#awards">Awards</a></li>
                   <li class="nav-dropdown">
                     <button class="nav-dropdown__trigger" type="button" data-dropdown-toggle aria-expanded="false" aria-controls="nav-dropdown-about" aria-haspopup="true">About Us</button>
-                    <div class="nav-dropdown__panel" id="nav-dropdown-about" aria-label="About Us">
+                    <div class="nav-dropdown__panel" id="nav-dropdown-about" aria-label="About Us" hidden>
                       <a href="about.html#about-hero">Why</a>
                       <a href="about.html#about-who">Who</a>
                       <a href="about.html#about-what">What</a>
@@ -282,7 +282,7 @@
             <div class="award-card__actions">
               <a class="award-proof" href="https://www.birac.nic.in/siip.php" target="_blank" rel="noreferrer">
                 Proof link
-                <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <svg viewBox="0 0 20 20" fill="none" aria-hidden="true" width="16" height="16">
                   <path d="M8 4h8v8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
                   <path d="M16 4 8.6 11.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
                   <path d="M6.2 6.4H4.8A1.8 1.8 0 0 0 3 8.2v7A1.8 1.8 0 0 0 4.8 17h7A1.8 1.8 0 0 0 13.6 15.2v-1.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
@@ -298,7 +298,7 @@
                   </p>
                   <a class="award-proof award-proof--inline" href="https://www.birac.nic.in/desc_new.php?id=395" target="_blank" rel="noreferrer">
                     SIIP explainer
-                    <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <svg viewBox="0 0 20 20" fill="none" aria-hidden="true" width="16" height="16">
                       <path d="M8 4h8v8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
                       <path d="M16 4 8.6 11.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
                     </svg>
@@ -338,7 +338,7 @@
             <div class="award-card__actions">
               <a class="award-proof" href="https://ibda.design-india.com/trachease-curioedge/" target="_blank" rel="noreferrer">
                 Proof link
-                <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <svg viewBox="0 0 20 20" fill="none" aria-hidden="true" width="16" height="16">
                   <path d="M8 4h8v8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
                   <path d="M16 4 8.6 11.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
                   <path d="M6.2 6.4H4.8A1.8 1.8 0 0 0 3 8.2v7A1.8 1.8 0 0 0 4.8 17h7A1.8 1.8 0 0 0 13.6 15.2v-1.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
@@ -647,6 +647,7 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
     document.documentElement.classList.add('js');
+    const hasStyles = getComputedStyle(document.documentElement).getPropertyValue('--bg').trim() !== '';
 
     const prefersReducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
     const shouldReduceMotion = prefersReducedMotionQuery.matches;
@@ -734,11 +735,15 @@
     const navToggle = document.querySelector(".nav-toggle");
     const navLinks = document.querySelectorAll(".nav-links a, .nav-dropdown__panel a");
     const dropdownToggles = document.querySelectorAll("[data-dropdown-toggle]");
+    const dropdownPanels = document.querySelectorAll(".nav-dropdown__panel");
 
     if (nav && navToggle) {
       const isDrawer = () => window.matchMedia('(max-width: 1200px)').matches;
 
       const closeDropdowns = () => {
+        dropdownPanels.forEach(panel => {
+          panel.hidden = true;
+        });
         document.querySelectorAll('.nav-dropdown.nav-dropdown-open').forEach(dropdown => {
           dropdown.classList.remove('nav-dropdown-open');
         });
@@ -776,10 +781,14 @@
         toggle.addEventListener('click', () => {
           const dropdown = toggle.closest('.nav-dropdown');
           if (!dropdown) return;
+          const panel = dropdown.querySelector('.nav-dropdown__panel');
           const willOpen = !dropdown.classList.contains('nav-dropdown-open');
           closeDropdowns();
           dropdown.classList.toggle('nav-dropdown-open', willOpen);
           toggle.setAttribute('aria-expanded', String(willOpen));
+          if (panel) {
+            panel.hidden = !willOpen;
+          }
         });
       });
 
@@ -890,9 +899,16 @@ const contactLocationsEl = document.querySelector('[data-contact-locations]');
         const slides = Array.from(gallery.querySelectorAll('img'));
         if (!slides.length) return;
 
+        const shouldHideSlides = !hasStyles;
         let currentIndex = slides.findIndex(img => img.classList.contains('is-active'));
         if (currentIndex < 0) currentIndex = 0;
-        slides.forEach((img, index) => img.classList.toggle('is-active', index === currentIndex));
+        slides.forEach((img, index) => {
+          const isActive = index === currentIndex;
+          img.classList.toggle('is-active', isActive);
+          if (shouldHideSlides) {
+            img.hidden = !isActive;
+          }
+        });
 
 
         const getSlideSrc = slide => slide.currentSrc || slide.src;
@@ -950,11 +966,17 @@ const contactLocationsEl = document.querySelector('[data-contact-locations]');
           if (normalized === currentIndex) return;
 
           slides[currentIndex].classList.remove('is-active');
+          if (shouldHideSlides) {
+            slides[currentIndex].hidden = true;
+          }
           dotButtons[currentIndex]?.setAttribute('aria-current', 'false');
 
           currentIndex = normalized;
 
           slides[currentIndex].classList.add('is-active');
+          if (shouldHideSlides) {
+            slides[currentIndex].hidden = false;
+          }
           dotButtons[currentIndex]?.setAttribute('aria-current', 'true');
 
           swapBackground();
