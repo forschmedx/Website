@@ -283,15 +283,27 @@
       </nav>
       <div class="footer-cta">
         <p>Have a breakthrough in mind?</p>
-        <a class="btn btn-glow" href="mailto:contact@forschmedx.com">Contact Us</a>
+        <a class="btn btn-glow" href="mailto:forschmedx@gmail.com">Contact Us</a>
       </div>
       <p class="footer-copy">&copy; <span id="year"></span> ForschMedX. All rights reserved.</p>
     </div>
   </footer>
 
+  <button class="back-to-top" type="button" aria-label="Back to top">
+    Back to top
+    <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+      <path d="M10 15V5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+      <path d="M5.5 9.5 10 5l4.5 4.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
     document.documentElement.classList.add('js');
+
+    const prefersReducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const shouldReduceMotion = prefersReducedMotionQuery.matches;
+    const backToTopButton = document.querySelector('.back-to-top');
 
     const themeToggle = document.querySelector('[data-theme-toggle]');
     const themeToggleLabel = themeToggle?.querySelector('.theme-toggle__label');
@@ -325,6 +337,19 @@
     const initialTheme = resolveTheme();
     document.documentElement.dataset.theme = initialTheme;
     syncThemeUI(initialTheme);
+
+    const setBackToTopVisibility = () => {
+      if (!backToTopButton) return;
+      backToTopButton.classList.toggle('is-visible', window.scrollY > 420);
+    };
+
+    if (backToTopButton) {
+      backToTopButton.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: shouldReduceMotion ? 'auto' : 'smooth' });
+      });
+      window.addEventListener('scroll', setBackToTopVisibility, { passive: true });
+      setBackToTopVisibility();
+    }
 
     if (themeToggle) {
       themeToggle.addEventListener('click', () => {
