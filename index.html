@@ -15,7 +15,7 @@
       document.documentElement.dataset.theme = theme;
     })();
   </script>
-  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./styles.css?v=20250115">
 </head>
 <body>
   <header class="hero">
@@ -483,8 +483,7 @@
             </div>
             </div>
             <div class="award-card__media award-gallery" data-award-gallery data-interval="5200" style="--award-media-ratio: 4 / 5; --award-media-fit: contain; --award-media-max-width: clamp(280px, 46vw, 360px);">
-              <img class="is-active" src="assessts/Awards/IBDA/1000148245.jpg" alt="India's Best Design Project 2025 award trophy for TrachEase" loading="lazy" decoding="async" style="--award-media-position: 72% 20%;">
-              <img src="assessts/Awards/IBDA/1000148243.jpg" alt="India's Best Design Project 2025 award visuals for TrachEase" loading="lazy" decoding="async" style="--award-media-position: 55% 22%;">
+              <img class="is-active" src="assessts/Awards/IBDA/1000148243.jpg" alt="India's Best Design Project 2025 award visuals for TrachEase" loading="lazy" decoding="async" style="--award-media-position: 55% 22%;">
             </div>
           </article>
         </div>
@@ -899,7 +898,8 @@ const contactLocationsEl = document.querySelector('[data-contact-locations]');
         const slides = Array.from(gallery.querySelectorAll('img'));
         if (!slides.length) return;
 
-        const shouldHideSlides = !hasStyles;
+        const galleryStylesReady = hasStyles && getComputedStyle(slides[0]).position === 'absolute';
+        const shouldHideSlides = !galleryStylesReady;
         let currentIndex = slides.findIndex(img => img.classList.contains('is-active'));
         if (currentIndex < 0) currentIndex = 0;
         slides.forEach((img, index) => {
@@ -910,6 +910,11 @@ const contactLocationsEl = document.querySelector('[data-contact-locations]');
           }
         });
 
+
+        if (!galleryStylesReady) {
+          gallery.dataset.awardGalleryBound = 'true';
+          return;
+        }
 
         const getSlideSrc = slide => slide.currentSrc || slide.src;
 
