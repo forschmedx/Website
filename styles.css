@@ -2085,6 +2085,28 @@ body.nav-open::before {
   color: var(--text-soft);
 }
 
+.award-card__detail {
+  margin: 0;
+  color: rgba(217, 230, 255, 0.86);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  transition: opacity 360ms ease, transform 480ms ease;
+}
+
+:root[data-theme="light"] .award-card__detail {
+  color: rgba(11, 19, 43, 0.78);
+}
+
+.js .award-card.reveal .award-card__detail {
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+.js .award-card.reveal-visible .award-card__detail {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .award-card__bullets {
   list-style: none;
   margin: 0;
@@ -2102,7 +2124,7 @@ body.nav-open::before {
 
 .award-card__bullets li {
   position: relative;
-  padding-left: 18px;
+  padding-left: 0;
   transition: opacity 360ms ease, transform 480ms ease;
 }
 
@@ -2123,15 +2145,9 @@ body.nav-open::before {
 .award-card__bullets li:nth-child(5) { transition-delay: 0.32s; }
 
 .award-card__bullets li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 7px;
-  width: 9px;
-  height: 9px;
-  border-radius: 999px;
-  background: linear-gradient(135deg, #4aa3ff, #35d3b4);
-  box-shadow: 0 0 12px rgba(74, 163, 255, 0.45);
+  content: none;
+  width: 0;
+  height: 0;
 }
 
 :root[data-theme="light"] .award-card__bullets li::before {
